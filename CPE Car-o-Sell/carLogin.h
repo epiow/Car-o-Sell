@@ -1,36 +1,48 @@
 #pragma once
 #include <Windows.h>
 #include <cstdlib>
-#include "MyForm1.h"
+#include "carSignUp.h"
+#include <vector>
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <msclr/marshal_cppstd.h>
+
+
+
 namespace CPECaroSell {
 
     using namespace System;
     using namespace System::Windows::Forms;
 
-    public ref class MyForm : public System::Windows::Forms::Form
+    public ref class carLogin : public System::Windows::Forms::Form
+
     {
     public:
-        MyForm(void)
+        carLogin(void)
         {
             InitializeComponent();
+            LoadUserCredentials("UserData.csv");
         }
 
     private:
         System::Windows::Forms::TextBox^ usernameTextBox;
         System::Windows::Forms::TextBox^ passwordTextBox;
         System::Windows::Forms::Button^ signUpButton;
-        System::Windows::F4orms::Label^ label1;
+        System::Windows::Forms::Label^ label1;
         System::Windows::Forms::Label^ label2;
         System::Windows::Forms::Button^ exitButton;
         System::Windows::Forms::Button^ loginButton;
-        MyForm1^ myForm1;
+        carSignUp^ myForm1;
+
+        array<String^, 2>^ userCredentials;
 
 
       
 
         void InitializeComponent(void)
         {
-            System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
+            System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(carLogin::typeid));
             this->usernameTextBox = (gcnew System::Windows::Forms::TextBox());
             this->passwordTextBox = (gcnew System::Windows::Forms::TextBox());
             this->loginButton = (gcnew System::Windows::Forms::Button());
@@ -48,7 +60,7 @@ namespace CPECaroSell {
             this->exitButton->Size = System::Drawing::Size(40, 40); // Set the size as needed
             this->exitButton->TabIndex = 4;
             this->exitButton->Text = L"X"; // Display an "X" to represent exit
-            this->exitButton->Click += gcnew System::EventHandler(this, &MyForm::exitButton_Click);
+            this->exitButton->Click += gcnew System::EventHandler(this, &carLogin::exitButton_Click);
 
             // Add the exitButton to the form's controls
             this->Controls->Add(this->exitButton);
@@ -59,7 +71,7 @@ namespace CPECaroSell {
             this->usernameTextBox->Name = L"usernameTextBox";
             this->usernameTextBox->Size = System::Drawing::Size(212, 22);
             this->usernameTextBox->TabIndex = 0;
-            this->usernameTextBox->TextChanged += gcnew System::EventHandler(this, &MyForm::usernameTextBox_TextChanged);
+            this->usernameTextBox->TextChanged += gcnew System::EventHandler(this, &carLogin::usernameTextBox_TextChanged);
             // 
             // passwordTextBox
             // 
@@ -69,7 +81,7 @@ namespace CPECaroSell {
             this->passwordTextBox->PasswordChar = '*';
             this->passwordTextBox->Size = System::Drawing::Size(212, 22);
             this->passwordTextBox->TabIndex = 1;
-            this->passwordTextBox->TextChanged += gcnew System::EventHandler(this, &MyForm::passwordTextBox_TextChanged);
+            this->passwordTextBox->TextChanged += gcnew System::EventHandler(this, &carLogin::passwordTextBox_TextChanged);
             // 
             // loginButton
             // 
@@ -78,7 +90,7 @@ namespace CPECaroSell {
             this->loginButton->Size = System::Drawing::Size(115, 36);
             this->loginButton->TabIndex = 2;
             this->loginButton->Text = L"Login";
-            this->loginButton->Click += gcnew System::EventHandler(this, &MyForm::loginButton_Click);
+            this->loginButton->Click += gcnew System::EventHandler(this, &carLogin::loginButton_Click);
             // 
             // signUpButton
             // 
@@ -87,7 +99,7 @@ namespace CPECaroSell {
             this->signUpButton->Size = System::Drawing::Size(115, 36);
             this->signUpButton->TabIndex = 3;
             this->signUpButton->Text = L"Sign up";
-            this->signUpButton->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+            this->signUpButton->Click += gcnew System::EventHandler(this, &carLogin::button1_Click);
             // 
             // label1
             // 
@@ -99,7 +111,7 @@ namespace CPECaroSell {
             this->label1->Size = System::Drawing::Size(124, 35);
             this->label1->TabIndex = 4;
             this->label1->Text = L"USERNAME";
-            this->label1->Click += gcnew System::EventHandler(this, &MyForm::label1_Click);
+            this->label1->Click += gcnew System::EventHandler(this, &carLogin::label1_Click);
             // 
             // label2
             // 
@@ -110,8 +122,8 @@ namespace CPECaroSell {
             this->label2->Name = L"label2";
             this->label2->Size = System::Drawing::Size(124, 35);
             this->label2->TabIndex = 5;
-            this->label2->Text = L"USERNAME";
-            this->label2->Click += gcnew System::EventHandler(this, &MyForm::label2_Click);
+            this->label2->Text = L"PASSWORD";
+            this->label2->Click += gcnew System::EventHandler(this, &carLogin::label2_Click);
             // 
             // MyForm
             // 
@@ -126,61 +138,103 @@ namespace CPECaroSell {
             this->Controls->Add(this->passwordTextBox);
             this->Controls->Add(this->loginButton);
             this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-            this->Name = L"MyForm";
+            this->Name = L"Login";
             this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
             this->Text = L"Login Form";
-            this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+            this->Load += gcnew System::EventHandler(this, &carLogin::carLogin_Load);
             this->ResumeLayout(false);
             this->PerformLayout();
 
 
-            this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+            this->Load += gcnew System::EventHandler(this, &carLogin::carLogin_Load);
             this->ResumeLayout(false);
             this->PerformLayout();
         }
 
-        // Event handler for the Login button click event
+
         System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e)
         {
             String^ username = usernameTextBox->Text;
             String^ password = passwordTextBox->Text;
 
-            // Perform basic authentication (replace with your logic)
-            if (username == L"hello" && password == L"hello")
+            bool authenticated = CheckUserCredentials(username, password);
+
+            if (authenticated)
             {
-                MessageBox::Show(L"Login successful!");
+                MessageBox::Show(L"User Login successful!");
             }
             else
             {
-                MessageBox::Show(L"Login failed. Please try again.");
+                MessageBox::Show(L"Account Not Found. Please try again.");
             }
         }
 
         System::Void exitButton_Click(System::Object^ sender, System::EventArgs^ e)
         {
-            // Show a confirmation dialog
+  
             if (MessageBox::Show(L"Do you want to exit the application?", L"Exit", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
             {
-                // Close the application
-                this->Close(); // Close the form
+              
+                this->Close(); 
             }
         }
-        System::Void MyForm::signUpButton_Click(System::Object^ sender, System::EventArgs^ e)
+
+        //THIS STILL DOESNT WORK
+        //under construction
+        System::Void signUpButton_Click(System::Object^ sender, System::EventArgs^ e)
         {
-            // Create an instance of MyForm1 if it doesn't exist
-            if (myForm1 == nullptr)
-            {
-                myForm1 = gcnew MyForm1();
-            }
-
-            // Show the MyForm1 form
+            myForm1 = gcnew carSignUp();
             myForm1->Show();
-
-            // Hide the current form (MyForm)
             this->Hide();
         }
 
-    private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+        //DATABASE HANDLING
+        void LoadUserCredentials(const std::string& filename)
+        {
+            std::ifstream file(filename);
+
+            if (!file.is_open()) {
+                MessageBox::Show(L"Error: Unable to open user credentials file.");
+                return;
+            }
+
+            std::vector<std::vector<std::string>> data; 
+
+            std::string line;
+            while (std::getline(file, line)) {
+                std::vector<std::string> row;
+                std::istringstream iss(line);
+                std::string cell;
+                while (std::getline(iss, cell, ',')) {
+                    row.push_back(cell);
+                }
+                data.push_back(row);
+            }
+
+            file.close();
+
+            // CONVERSION TO ARRAY FROM CSV ^__^
+            userCredentials = gcnew array<String^, 2>(data.size(), data[0].size());
+            for (int i = 0; i < data.size(); i++) {
+                for (int j = 0; j < data[0].size(); j++) {
+                    userCredentials[i, j] = gcnew String(data[i][j].c_str());
+                }
+            }
+        }
+        bool CheckUserCredentials(String^ username, String^ password)
+        {
+            for (int i = 0; i < userCredentials->GetLength(0); i++) {
+                if (String::Equals(userCredentials[i, 0], username) && String::Equals(userCredentials[i, 1], password)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
+
+
+    private: System::Void carLogin_Load(System::Object^ sender, System::EventArgs^ e) {
     }
     private: System::Void usernameTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
     }

@@ -1,0 +1,7 @@
+﻿Username,Password,isAdmin
+admin,password,TRUE
+user1,password,FALSE
+user2,password,FALSE
+user3,password,FALSE
+user4,password,FALSE
+user5,password,FALSE

@@ -10,12 +10,12 @@ namespace CPECaroSell {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for MyForm1
+	/// Summary for carSignUp
 	/// </summary>
-	public ref class MyForm1 : public System::Windows::Forms::Form
+	public ref class carSignUp : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm1(void)
+		carSignUp(void)
 		{
 			InitializeComponent();
 			//
@@ -68,7 +68,7 @@ namespace CPECaroSell {
             this->signUpButton->Size = System::Drawing::Size(94, 23);
             this->signUpButton->TabIndex = 3;
             this->signUpButton->Text = L"Sign Up";
-            this->signUpButton->Click += gcnew System::EventHandler(this, &MyForm1::signUpButton_Click);
+            this->signUpButton->Click += gcnew System::EventHandler(this, &carSignUp::signUpButton_Click);
 
             // cancelButton
             this->cancelButton->Location = System::Drawing::Point(118, 87);
@@ -76,9 +76,9 @@ namespace CPECaroSell {
             this->cancelButton->Size = System::Drawing::Size(94, 23);
             this->cancelButton->TabIndex = 4;
             this->cancelButton->Text = L"Cancel";
-            this->cancelButton->Click += gcnew System::EventHandler(this, &MyForm1::cancelButton_Click);
+            this->cancelButton->Click += gcnew System::EventHandler(this, &carSignUp::cancelButton_Click);
 
-            // MyForm1
+            // carSignUp
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->ClientSize = System::Drawing::Size(224, 126);
@@ -87,7 +87,7 @@ namespace CPECaroSell {
             this->Controls->Add(this->passwordTextBox);
             this->Controls->Add(this->usernameTextBox);
             this->Controls->Add(this->label1);
-            this->Name = L"MyForm1";
+            this->Name = L"carSignUp";
             this->Text = L"Sign Up";
             this->ResumeLayout(false);
             this->PerformLayout();
