@@ -2,16 +2,26 @@
 
 namespace CPECaroSell {
 
-    using namespace System;
-    using namespace System::Windows::Forms;
+	using namespace System;
+	using namespace System::ComponentModel;
+	using namespace System::Collections;
+	using namespace System::Windows::Forms;
+	using namespace System::Data;
+	using namespace System::Drawing;
 
-    public ref class MyForm1 : public System::Windows::Forms::Form
-    {
-    public:
-        MyForm1(void)
-        {
-            InitializeComponent();
-        }
+	/// <summary>
+	/// Summary for MyForm1
+	/// </summary>
+	public ref class MyForm1 : public System::Windows::Forms::Form
+	{
+	public:
+		MyForm1(void)
+		{
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
 
     private:
         System::Windows::Forms::Label^ label1;
@@ -21,7 +31,7 @@ namespace CPECaroSell {
         System::Windows::Forms::Button^ cancelButton;
 
         void InitializeComponent(void)
-        {
+		{
             this->label1 = (gcnew System::Windows::Forms::Label());
             this->usernameTextBox = (gcnew System::Windows::Forms::TextBox());
             this->passwordTextBox = (gcnew System::Windows::Forms::TextBox());
@@ -84,20 +94,26 @@ namespace CPECaroSell {
         }
 
         System::Void signUpButton_Click(System::Object^ sender, System::EventArgs^ e)
-        {
+			{
             // Handle sign-up logic here
             // For example, you can validate user input and create a new user account
 
             // After successful sign-up, you can close this form or perform other actions as needed
             this->Close();
-        }
+		}
 
+	private:
+		/// <summary>
+		/// Required designer variable.
+		/// </summary>
+		System::ComponentModel::Container ^components;
 
         System::Void cancelButton_Click(System::Object^ sender, System::EventArgs^ e)
-        {
+		{
             // Handle cancel button click event
             // For example, you can close this form without performing sign-up
             this->Close();
-        }
-    };
+		}
+#pragma endregion
+	};
 }

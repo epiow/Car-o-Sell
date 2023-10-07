@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include "MyForm1.h"
 namespace CPECaroSell {
-    
+
     using namespace System;
     using namespace System::Windows::Forms;
 
@@ -19,7 +19,7 @@ namespace CPECaroSell {
         System::Windows::Forms::TextBox^ usernameTextBox;
         System::Windows::Forms::TextBox^ passwordTextBox;
         System::Windows::Forms::Button^ signUpButton;
-        System::Windows::Forms::Label^ label1;
+        System::Windows::F4orms::Label^ label1;
         System::Windows::Forms::Label^ label2;
         System::Windows::Forms::Button^ exitButton;
         System::Windows::Forms::Button^ loginButton;
@@ -195,6 +195,6 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+        }
+    };
 }
