@@ -21,12 +21,18 @@
     <ClCompile Include="carSignUp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="userMainWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="carLogin.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="carSignUp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="userMainWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

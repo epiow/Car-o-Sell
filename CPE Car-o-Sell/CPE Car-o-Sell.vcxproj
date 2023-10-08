@@ -123,12 +123,16 @@
   <ItemGroup>
     <ClCompile Include="carLogin.cpp" />
     <ClCompile Include="carSignUp.cpp" />
+    <ClCompile Include="userMainWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="carLogin.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="carSignUp.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="userMainWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
@@ -138,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="carSignUp.resx">
       <DependentUpon>carSignUp.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userMainWindow.resx">
+      <DependentUpon>userMainWindow.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
