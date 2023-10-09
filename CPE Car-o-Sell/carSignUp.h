@@ -1,4 +1,14 @@
 #pragma once
+#include <iostream>
+#include <fstream>
+#include <msclr/marshal_cppstd.h>
+#include <Windows.h>
+#include <cstdlib>
+#include "userMainWindow.h"
+#include <vector>
+#include <string>
+#include <fstream>
+#include <sstream>
 
 namespace CPECaroSell {
 
@@ -108,11 +118,80 @@ namespace CPECaroSell {
 
 		}
 
-        System::Void signUpButton_Click(System::Object^ sender, System::EventArgs^ e)
+		System::Void carSignUp::signUpButton_Click(System::Object^ sender, System::EventArgs^ e)
 		{
-            // TO DO - INSERT FUNCTIONALITY WITH CSV FILE ADDING USERS
+			// Get the username and password entered by the user
+			String^ newUsername = usernameTextBox->Text;
+			String^ newPassword = passwordTextBox->Text;
+
+			// Check if the username already exists in the CSV file
+			bool isDuplicate = CheckForDuplicateUsername("UserData.csv", newUsername);
+
+			if (isDuplicate)
+			{
+				MessageBox::Show(L"Username already exists. Please choose a different username.");
+			}
+			else
+			{
+				// Append the new username and password to the CSV file
+				AddUserToCSV("UserData.csv", newUsername, newPassword);
+
+				MessageBox::Show(L"Account created successfully!");
+				this->Close();
+			}
 		}
 
+		// Function to check for a duplicate username in the CSV file
+		bool carSignUp::CheckForDuplicateUsername(String^ filename, String^ newUsername)
+		{
+			std::ifstream file(msclr::interop::marshal_as<std::string>(filename));
+
+			if (!file.is_open())
+			{
+				// File not found or unable to open
+				return false;
+			}
+
+			std::string line;
+			while (std::getline(file, line))
+			{
+				std::istringstream iss(line);
+				std::string username;
+				if (std::getline(iss, username, ','))
+				{
+					// Convert the read username to a managed string
+					String^ managedUsername = gcnew String(username.c_str());
+
+					// Check if the read username matches the new username
+					if (String::Equals(managedUsername, newUsername))
+					{
+						file.close();
+						return true; // Username already exists
+					}
+				}
+			}
+
+			file.close();
+			return false; // Username does not exist
+		}
+
+		// Function to add a new user to the CSV file
+		void carSignUp::AddUserToCSV(String^ filename, String^ newUsername, String^ newPassword)
+		{
+			std::ofstream file(msclr::interop::marshal_as<std::string>(filename), std::ios::app);
+
+			if (!file.is_open())
+			{
+				// File not found or unable to open
+				MessageBox::Show(L"Error: Unable to create a new user account.");
+				return;
+			}
+
+			// Write the new username and password to the file
+			file << msclr::interop::marshal_as<std::string>(newUsername) << "," << msclr::interop::marshal_as<std::string>(newPassword) << std::endl;
+
+			file.close();
+		}
 	private:
 
 		System::ComponentModel::Container ^components;

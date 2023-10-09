@@ -5,3 +5,7 @@ user2,password,FALSE
 user3,password,FALSE
 user4,password,FALSE
 user5,password,FALSE
+user12,password,
+epiow,12345,
+testCreate,testPassword,
+newtest,newtest,
