@@ -185,7 +185,6 @@ namespace CPECaroSell {
            carSignUp^ obj = gcnew carSignUp();
            obj->ShowDialog();
         }
-
         //DATABASE HANDLING GAMIT CSV
         void LoadUserCredentials(const std::string& filename)
         {
@@ -196,8 +195,7 @@ namespace CPECaroSell {
                 return;
             }
 
-            std::vector<std::vector<std::string>> data; 
-            //READ
+            std::vector<std::vector<std::string>> data;
             std::string line;
             while (std::getline(file, line)) {
                 std::vector<std::string> row;
@@ -210,15 +208,22 @@ namespace CPECaroSell {
             }
 
             file.close();
-
+            int numColumns = data.empty() ? 0 : data[0].size();
+            for (const auto& row : data) {
+                if (row.size() != numColumns) {
+                    MessageBox::Show(L"Error. Inconsistent number of columns in user credentials file.");
+                    return;
+                }
+            }
             // CONVERSION TO ARRAY FROM CSV ^__^
-            userCredentials = gcnew array<String^, 2>(data.size(), data[0].size());
+            userCredentials = gcnew array<String^, 2>(data.size(), numColumns);
             for (int i = 0; i < data.size(); i++) {
-                for (int j = 0; j < data[0].size(); j++) {
+                for (int j = 0; j < numColumns; j++) {
                     userCredentials[i, j] = gcnew String(data[i][j].c_str());
                 }
             }
         }
+
         bool CheckUserCredentials(String^ username, String^ password)
         {
             for (int i = 0; i < userCredentials->GetLength(0); i++) {
