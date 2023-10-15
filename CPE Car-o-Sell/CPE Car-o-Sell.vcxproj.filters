@@ -24,6 +24,12 @@
     <ClCompile Include="userMainWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="rentWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="calendar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="carLogin.h">
@@ -35,9 +41,18 @@
     <ClInclude Include="userMainWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="rentWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="calendar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="UserData.csv">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Test.csv">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>
