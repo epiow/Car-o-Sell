@@ -7,8 +7,20 @@ using namespace System::Windows::Forms;
 int main(array<String^>^ args) {
     Application::SetCompatibleTextRenderingDefault(false);
     Application::EnableVisualStyles();
-    CPECaroSell::carLogin frm;
-    Application::Run(% frm);
-    return 0; // Add this line to return an integer (0 indicates successful execution)
-}
 
+    // Create instances of both forms
+    CPECaroSell::carLogin loginForm;
+    CPECaroSell::userMainwindow mainForm;
+
+    // Show the login form initially
+    Application::Run(% loginForm);
+
+    // When the login is successful, show the userMainwindow form
+    if (loginForm.SetLoginSuccessful()) {
+        loginForm.Close();  // Close the login form
+        Application::Run(% mainForm);  // Show the userMainwindow form
+    }
+
+
+    return 0;  // Add this line to return an integer (0 indicates successful execution)
+}

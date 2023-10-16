@@ -5,6 +5,7 @@
 #include <Windows.h>
 #include <cstdlib>
 #include "userMainWindow.h"
+#include "carSignUp.h"
 #include <vector>
 #include <string>
 #include <fstream>
@@ -58,6 +59,7 @@ namespace CPECaroSell {
 			this->label1->Size = System::Drawing::Size(142, 16);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Sign Up for an Account";
+			this->label1->Click += gcnew System::EventHandler(this, &carSignUp::label1_Click);
 			// 
 			// usernameTextBox
 			// 
@@ -203,5 +205,7 @@ namespace CPECaroSell {
 #pragma endregion
 	private: System::Void carSignUp_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

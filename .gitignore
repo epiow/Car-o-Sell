@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/CPE Car-o-Sell/gege.h
+/CPE Car-o-Sell/MyForm1.cpp
+/CPE Car-o-Sell/MyForm.cpp
+/CPE Car-o-Sell/MyForm.h
