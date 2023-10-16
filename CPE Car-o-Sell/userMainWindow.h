@@ -1,4 +1,12 @@
 #pragma once
+#include "rentWindow.h"
+#include <Windows.h>
+#include <cstdlib>
+#include "carSignUp.h"
+#include <vector>
+#include <string>
+#include <fstream>
+#include <sstream>
 
 namespace CPECaroSell {
 
@@ -62,10 +70,10 @@ namespace CPECaroSell {
 			// 
 			this->rentBtn->Font = (gcnew System::Drawing::Font(L"Cooper Black", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->rentBtn->Location = System::Drawing::Point(281, 213);
-			this->rentBtn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->rentBtn->Location = System::Drawing::Point(231, 225);
+			this->rentBtn->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->rentBtn->Name = L"rentBtn";
-			this->rentBtn->Size = System::Drawing::Size(204, 123);
+			this->rentBtn->Size = System::Drawing::Size(272, 151);
 			this->rentBtn->TabIndex = 0;
 			this->rentBtn->Text = L"RENT";
 			this->rentBtn->UseVisualStyleBackColor = true;
@@ -75,25 +83,25 @@ namespace CPECaroSell {
 			// 
 			this->sellBtn->Font = (gcnew System::Drawing::Font(L"Cooper Black", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->sellBtn->Location = System::Drawing::Point(281, 467);
-			this->sellBtn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->sellBtn->Location = System::Drawing::Point(231, 475);
+			this->sellBtn->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->sellBtn->Name = L"sellBtn";
-			this->sellBtn->Size = System::Drawing::Size(204, 128);
+			this->sellBtn->Size = System::Drawing::Size(272, 158);
 			this->sellBtn->TabIndex = 1;
 			this->sellBtn->Text = L"SELL";
 			this->sellBtn->UseVisualStyleBackColor = true;
 			// 
 			// userMainwindow
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlDark;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(800, 800);
+			this->ClientSize = System::Drawing::Size(987, 800);
 			this->Controls->Add(this->sellBtn);
 			this->Controls->Add(this->rentBtn);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"userMainwindow";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MyForm";
@@ -103,8 +111,12 @@ namespace CPECaroSell {
 		}
 #pragma endregion
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		rentWindow^ obj = gcnew rentWindow();
+		obj->ShowDialog();
+		this->Close();
 	}
 	};
 }

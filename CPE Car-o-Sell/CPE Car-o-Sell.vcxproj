@@ -121,15 +121,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="calendar.cpp" />
     <ClCompile Include="carLogin.cpp" />
     <ClCompile Include="carSignUp.cpp" />
+    <ClCompile Include="rentWindow.cpp" />
     <ClCompile Include="userMainWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="calendar.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="carLogin.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="carSignUp.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="rentWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="userMainWindow.h">
@@ -137,6 +145,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="calendar.resx">
+      <DependentUpon>calendar.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="carLogin.resx">
       <DependentUpon>carLogin.h</DependentUpon>
       <SubType>Designer</SubType>
@@ -144,11 +155,15 @@
     <EmbeddedResource Include="carSignUp.resx">
       <DependentUpon>carSignUp.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rentWindow.resx">
+      <DependentUpon>rentWindow.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="userMainWindow.resx">
       <DependentUpon>userMainWindow.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Test.csv" />
     <None Include="UserData.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
