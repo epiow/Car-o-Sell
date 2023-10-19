@@ -1,14 +1,11 @@
 #pragma once
 #include <Windows.h>
 #include <cstdlib>
-#include "carSignUp.h"
-#include "userMainWindow.h"
 #include <vector>
 #include <string>
 #include <fstream>
 #include <sstream>
-
-
+#include "user.h"
 
 namespace CPECaroSell {
 
@@ -156,7 +153,7 @@ namespace CPECaroSell {
             this->signUpButton->TabIndex = 6;
             this->signUpButton->Text = L"Sign Up";
             this->signUpButton->UseVisualStyleBackColor = true;
-            this->signUpButton->Click += gcnew System::EventHandler(this, &carLogin::signUpButton_Click);
+            //this->signUpButton->Click += gcnew System::EventHandler(this, &carLogin::signUpButton_Click);
             // 
             // bindingNavigator1
             // 
@@ -307,11 +304,13 @@ namespace CPECaroSell {
         }
 
         //FIXED!!
-        System::Void signUpButton_Click(System::Object^ sender, System::EventArgs^ e)
+        /*System::Void signUpButton_Click(System::Object^ sender, System::EventArgs^ e)
         {
             carSignUp^ signUpWin = gcnew carSignUp();
             signUpWin->Show();
-        }
+        }*/
+
+
         //DATABASE HANDLING GAMIT CSV
         void LoadUserCredentials(const std::string& filename)
         {
@@ -360,6 +359,11 @@ namespace CPECaroSell {
             }
             return false;
         }
+
+
+        public: User^ user = nullptr;
+
+        public: bool SwitchToMain = false;
         System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e)
         {
             String^ username = usernameTextBox->Text;
@@ -368,10 +372,7 @@ namespace CPECaroSell {
 
             if (authenticated)
             {
-                MessageBox::Show(L"User Login successful!");
-                SetLoginSuccessful(true); // Set loginSuccessful to true
-                userMainwindow^ mainwin = gcnew userMainwindow();
-                mainwin->ShowDialog();
+                SwitchToMain = true;
                 this->Close();
             }
             else
