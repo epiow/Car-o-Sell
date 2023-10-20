@@ -53,8 +53,8 @@ namespace CPECaroSell {
     private: System::Windows::Forms::ToolStripButton^ bindingNavigatorMoveNextItem;
     private: System::Windows::Forms::ToolStripButton^ bindingNavigatorMoveLastItem;
     private: System::Windows::Forms::ToolStripSeparator^ bindingNavigatorSeparator2;
-    private: System::Windows::Forms::Label^ label1;
-    private: System::Windows::Forms::Label^ label2;
+
+
            bool loginSuccessful;
 
 
@@ -80,8 +80,6 @@ namespace CPECaroSell {
             this->bindingNavigatorMoveNextItem = (gcnew System::Windows::Forms::ToolStripButton());
             this->bindingNavigatorMoveLastItem = (gcnew System::Windows::Forms::ToolStripButton());
             this->bindingNavigatorSeparator2 = (gcnew System::Windows::Forms::ToolStripSeparator());
-            this->label1 = (gcnew System::Windows::Forms::Label());
-            this->label2 = (gcnew System::Windows::Forms::Label());
             (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingNavigator1))->BeginInit();
             this->bindingNavigator1->SuspendLayout();
             this->SuspendLayout();
@@ -266,32 +264,6 @@ namespace CPECaroSell {
             this->bindingNavigatorSeparator2->Name = L"bindingNavigatorSeparator2";
             this->bindingNavigatorSeparator2->Size = System::Drawing::Size(6, 27);
             // 
-            // label1
-            // 
-            this->label1->AutoSize = true;
-            this->label1->Font = (gcnew System::Drawing::Font(L"Rockwell Condensed", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->label1->Location = System::Drawing::Point(316, 308);
-            this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-            this->label1->Name = L"label1";
-            this->label1->Size = System::Drawing::Size(100, 29);
-            this->label1->TabIndex = 4;
-            this->label1->Text = L"USERNAME";
-            this->label1->Click += gcnew System::EventHandler(this, &carLogin::label1_Click);
-            // 
-            // label2
-            // 
-            this->label2->AutoSize = true;
-            this->label2->Font = (gcnew System::Drawing::Font(L"Rockwell Condensed", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->label2->Location = System::Drawing::Point(317, 417);
-            this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-            this->label2->Name = L"label2";
-            this->label2->Size = System::Drawing::Size(99, 29);
-            this->label2->TabIndex = 5;
-            this->label2->Text = L"PASSWORD";
-            this->label2->Click += gcnew System::EventHandler(this, &carLogin::label2_Click);
-            // 
             // carLogin
             // 
             this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -301,8 +273,6 @@ namespace CPECaroSell {
             this->Controls->Add(this->bindingNavigator1);
             this->Controls->Add(this->signUpButton);
             this->Controls->Add(this->exitButton);
-            this->Controls->Add(this->label2);
-            this->Controls->Add(this->label1);
             this->Controls->Add(this->usernameTextBox);
             this->Controls->Add(this->passwordTextBox);
             this->Controls->Add(this->loginButton);
