@@ -89,36 +89,46 @@ namespace CPECaroSell {
             // usernameTextBox
             // 
             this->usernameTextBox->Anchor = System::Windows::Forms::AnchorStyles::None;
+            this->usernameTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
             this->usernameTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->usernameTextBox->Location = System::Drawing::Point(170, 349);
+            this->usernameTextBox->Location = System::Drawing::Point(170, 351);
             this->usernameTextBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
             this->usernameTextBox->Name = L"usernameTextBox";
-            this->usernameTextBox->Size = System::Drawing::Size(407, 53);
+            this->usernameTextBox->Size = System::Drawing::Size(407, 46);
             this->usernameTextBox->TabIndex = 0;
             this->usernameTextBox->TextChanged += gcnew System::EventHandler(this, &carLogin::usernameTextBox_TextChanged);
             // 
             // passwordTextBox
             // 
             this->passwordTextBox->Anchor = System::Windows::Forms::AnchorStyles::None;
+            this->passwordTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
             this->passwordTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->passwordTextBox->Location = System::Drawing::Point(170, 458);
+            this->passwordTextBox->Location = System::Drawing::Point(170, 461);
             this->passwordTextBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
             this->passwordTextBox->Name = L"passwordTextBox";
             this->passwordTextBox->PasswordChar = '*';
-            this->passwordTextBox->Size = System::Drawing::Size(407, 53);
+            this->passwordTextBox->Size = System::Drawing::Size(407, 46);
             this->passwordTextBox->TabIndex = 1;
             this->passwordTextBox->TextChanged += gcnew System::EventHandler(this, &carLogin::passwordTextBox_TextChanged);
             // 
             // loginButton
             // 
+            this->loginButton->BackColor = System::Drawing::SystemColors::ControlLightLight;
+            this->loginButton->FlatAppearance->BorderColor = System::Drawing::Color::WhiteSmoke;
+            this->loginButton->FlatAppearance->BorderSize = 0;
+            this->loginButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->loginButton->Font = (gcnew System::Drawing::Font(L"Tahoma", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->loginButton->ForeColor = System::Drawing::SystemColors::ControlText;
             this->loginButton->Location = System::Drawing::Point(170, 550);
             this->loginButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
             this->loginButton->Name = L"loginButton";
             this->loginButton->Size = System::Drawing::Size(407, 72);
             this->loginButton->TabIndex = 2;
-            this->loginButton->Text = L"Login";
+            this->loginButton->Text = L"Sign In";
+            this->loginButton->UseVisualStyleBackColor = false;
             this->loginButton->Click += gcnew System::EventHandler(this, &carLogin::loginButton_Click);
             // 
             // exitButton
@@ -133,13 +143,19 @@ namespace CPECaroSell {
             // 
             // signUpButton
             // 
+            this->signUpButton->BackColor = System::Drawing::SystemColors::ControlLightLight;
+            this->signUpButton->FlatAppearance->BorderColor = System::Drawing::Color::White;
+            this->signUpButton->FlatAppearance->BorderSize = 0;
+            this->signUpButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->signUpButton->Font = (gcnew System::Drawing::Font(L"Tahoma", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
             this->signUpButton->Location = System::Drawing::Point(170, 638);
             this->signUpButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
             this->signUpButton->Name = L"signUpButton";
             this->signUpButton->Size = System::Drawing::Size(407, 75);
             this->signUpButton->TabIndex = 6;
             this->signUpButton->Text = L"Sign Up";
-            this->signUpButton->UseVisualStyleBackColor = true;
+            this->signUpButton->UseVisualStyleBackColor = false;
             // 
             // bindingNavigator1
             // 
@@ -255,7 +271,7 @@ namespace CPECaroSell {
             this->label1->AutoSize = true;
             this->label1->Font = (gcnew System::Drawing::Font(L"Rockwell Condensed", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label1->Location = System::Drawing::Point(15, 211);
+            this->label1->Location = System::Drawing::Point(316, 308);
             this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
             this->label1->Name = L"label1";
             this->label1->Size = System::Drawing::Size(100, 29);
@@ -268,7 +284,7 @@ namespace CPECaroSell {
             this->label2->AutoSize = true;
             this->label2->Font = (gcnew System::Drawing::Font(L"Rockwell Condensed", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label2->Location = System::Drawing::Point(17, 288);
+            this->label2->Location = System::Drawing::Point(317, 417);
             this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
             this->label2->Name = L"label2";
             this->label2->Size = System::Drawing::Size(99, 29);
