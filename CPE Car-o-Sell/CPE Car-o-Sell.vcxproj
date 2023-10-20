@@ -121,6 +121,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="adminWindow.cpp" />
     <ClCompile Include="calendar.cpp" />
     <ClCompile Include="carLogin.cpp" />
     <ClCompile Include="carSignUp.cpp" />
@@ -129,6 +130,9 @@
     <ClCompile Include="userMainWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="adminWindow.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="calendar.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -147,6 +151,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="adminWindow.resx">
+      <DependentUpon>adminWindow.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="calendar.resx">
       <DependentUpon>calendar.h</DependentUpon>
     </EmbeddedResource>
