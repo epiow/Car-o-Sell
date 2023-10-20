@@ -164,6 +164,9 @@
     <EmbeddedResource Include="rentWindow.resx">
       <DependentUpon>rentWindow.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="sellWindow.resx">
+      <DependentUpon>sellWindow.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="userMainWindow.resx">
       <DependentUpon>userMainWindow.h</DependentUpon>
     </EmbeddedResource>

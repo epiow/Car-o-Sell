@@ -6,6 +6,7 @@
 #include <fstream>
 #include <sstream>
 #include "user.h"
+#include "sellWindow.h"
 
 namespace CPECaroSell {
 
@@ -83,6 +84,7 @@ namespace CPECaroSell {
 			this->sellBtn->TabIndex = 1;
 			this->sellBtn->Text = L"SELLING\?";
 			this->sellBtn->UseVisualStyleBackColor = false;
+			this->sellBtn->Click += gcnew System::EventHandler(this, &userMainwindow::sellBtn_Click);
 			// 
 			// button1
 			// 
@@ -148,5 +150,10 @@ namespace CPECaroSell {
 		switchToRentForm = true;
 		this->Close();
 	}
+private: System::Void sellBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+	sellWindow^ obj = gcnew sellWindow();
+	obj->ShowDialog();
+	this->Close();
+}
 };
 }

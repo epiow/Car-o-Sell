@@ -88,12 +88,12 @@ namespace CPECaroSell {
             // 
             this->usernameTextBox->Anchor = System::Windows::Forms::AnchorStyles::None;
             this->usernameTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
-            this->usernameTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
+            this->usernameTextBox->Font = (gcnew System::Drawing::Font(L"SansSerif", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(2)));
             this->usernameTextBox->Location = System::Drawing::Point(170, 351);
-            this->usernameTextBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+            this->usernameTextBox->Margin = System::Windows::Forms::Padding(2);
             this->usernameTextBox->Name = L"usernameTextBox";
-            this->usernameTextBox->Size = System::Drawing::Size(407, 46);
+            this->usernameTextBox->Size = System::Drawing::Size(407, 47);
             this->usernameTextBox->TabIndex = 0;
             this->usernameTextBox->TextChanged += gcnew System::EventHandler(this, &carLogin::usernameTextBox_TextChanged);
             // 
@@ -101,13 +101,13 @@ namespace CPECaroSell {
             // 
             this->passwordTextBox->Anchor = System::Windows::Forms::AnchorStyles::None;
             this->passwordTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
-            this->passwordTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
+            this->passwordTextBox->Font = (gcnew System::Drawing::Font(L"SansSerif", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(2)));
             this->passwordTextBox->Location = System::Drawing::Point(170, 461);
-            this->passwordTextBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+            this->passwordTextBox->Margin = System::Windows::Forms::Padding(2);
             this->passwordTextBox->Name = L"passwordTextBox";
             this->passwordTextBox->PasswordChar = '*';
-            this->passwordTextBox->Size = System::Drawing::Size(407, 46);
+            this->passwordTextBox->Size = System::Drawing::Size(407, 47);
             this->passwordTextBox->TabIndex = 1;
             this->passwordTextBox->TextChanged += gcnew System::EventHandler(this, &carLogin::passwordTextBox_TextChanged);
             // 
@@ -117,11 +117,11 @@ namespace CPECaroSell {
             this->loginButton->FlatAppearance->BorderColor = System::Drawing::Color::WhiteSmoke;
             this->loginButton->FlatAppearance->BorderSize = 0;
             this->loginButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->loginButton->Font = (gcnew System::Drawing::Font(L"Tahoma", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->loginButton->Font = (gcnew System::Drawing::Font(L"Designer", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->loginButton->ForeColor = System::Drawing::SystemColors::ControlText;
             this->loginButton->Location = System::Drawing::Point(170, 550);
-            this->loginButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+            this->loginButton->Margin = System::Windows::Forms::Padding(2);
             this->loginButton->Name = L"loginButton";
             this->loginButton->Size = System::Drawing::Size(407, 72);
             this->loginButton->TabIndex = 2;
@@ -132,7 +132,7 @@ namespace CPECaroSell {
             // exitButton
             // 
             this->exitButton->Location = System::Drawing::Point(690, 11);
-            this->exitButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+            this->exitButton->Margin = System::Windows::Forms::Padding(2);
             this->exitButton->Name = L"exitButton";
             this->exitButton->Size = System::Drawing::Size(48, 50);
             this->exitButton->TabIndex = 4;
@@ -145,10 +145,10 @@ namespace CPECaroSell {
             this->signUpButton->FlatAppearance->BorderColor = System::Drawing::Color::White;
             this->signUpButton->FlatAppearance->BorderSize = 0;
             this->signUpButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->signUpButton->Font = (gcnew System::Drawing::Font(L"Tahoma", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->signUpButton->Font = (gcnew System::Drawing::Font(L"Designer", 30, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
             this->signUpButton->Location = System::Drawing::Point(170, 638);
-            this->signUpButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+            this->signUpButton->Margin = System::Windows::Forms::Padding(2);
             this->signUpButton->Name = L"signUpButton";
             this->signUpButton->Size = System::Drawing::Size(407, 75);
             this->signUpButton->TabIndex = 6;
@@ -277,7 +277,7 @@ namespace CPECaroSell {
             this->Controls->Add(this->passwordTextBox);
             this->Controls->Add(this->loginButton);
             this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-            this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+            this->Margin = System::Windows::Forms::Padding(2);
             this->Name = L"carLogin";
             this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
             this->Text = L"Login Form";
