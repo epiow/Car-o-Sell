@@ -155,6 +155,7 @@ namespace CPECaroSell {
 			this->costTextBox->Name = L"costTextBox";
 			this->costTextBox->Size = System::Drawing::Size(287, 28);
 			this->costTextBox->TabIndex = 10;
+			this->costTextBox->TextChanged += gcnew System::EventHandler(this, &sellWindow::costTextBox_TextChanged);
 			// 
 			// proceedButton
 			// 
@@ -224,5 +225,7 @@ namespace CPECaroSell {
 	}
 	private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void costTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

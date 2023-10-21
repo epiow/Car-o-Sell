@@ -1,4 +1,4 @@
-﻿Username,Password,isAdmin
+Username,Password,isAdmin
 admin,password,TRUE
 user1,password,FALSE
 user2,password,FALSE

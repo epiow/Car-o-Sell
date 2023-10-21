@@ -33,7 +33,11 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="sellWindow.cpp">
+=======
+    <ClCompile Include="adminWindow.cpp">
+>>>>>>> d8888f00c52649468a9b5d00c8280af446740492
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,7 +60,11 @@
     <ClInclude Include="user.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="sellWindow.h">
+=======
+    <ClInclude Include="adminWindow.h">
+>>>>>>> d8888f00c52649468a9b5d00c8280af446740492
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
