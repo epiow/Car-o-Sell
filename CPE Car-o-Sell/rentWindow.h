@@ -6,6 +6,7 @@
 #include <sstream>
 #include <vector>
 #include "calendar.h"
+#include "user.h"
 
 namespace CPECaroSell {
 
@@ -22,7 +23,7 @@ namespace CPECaroSell {
 	public ref class rentWindow : public System::Windows::Forms::Form
 	{
 	public:
-		rentWindow(void)
+		rentWindow(User^ user)
 		{
 			InitializeComponent();
 			Loadcarinfo("Test.csv");
@@ -807,9 +808,11 @@ private: System::Void rentWindow_Load(System::Object^ sender, System::EventArgs^
 
 }
 
+
+public: bool switchBackToUserMain = false;
+
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-    calendar^ obj = gcnew calendar();
-    obj->ShowDialog();
+	switchBackToUserMain = true;
     this->Close();
 }
 

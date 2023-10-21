@@ -130,10 +130,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 236</value>
+    <value>25, 192</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 33</value>
+    <value>73, 26</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -166,10 +169,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 196</value>
+    <value>25, 159</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 33</value>
+    <value>53, 26</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -202,10 +208,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 156</value>
+    <value>25, 127</value>
+  </data>
+  <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 33</value>
+    <value>46, 26</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -238,10 +247,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 116</value>
+    <value>25, 94</value>
+  </data>
+  <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 33</value>
+    <value>106, 26</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -274,10 +286,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 76</value>
+    <value>25, 62</value>
+  </data>
+  <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 33</value>
+    <value>55, 26</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -310,10 +325,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="platenum1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 236</value>
+    <value>135, 192</value>
+  </data>
+  <data name="platenum1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="platenum1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 33</value>
+    <value>77, 26</value>
   </data>
   <data name="platenum1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -346,10 +364,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="seats1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 196</value>
+    <value>135, 159</value>
+  </data>
+  <data name="seats1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="seats1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 33</value>
+    <value>57, 26</value>
   </data>
   <data name="seats1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -382,10 +403,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="cost1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 156</value>
+    <value>135, 127</value>
+  </data>
+  <data name="cost1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="cost1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 33</value>
+    <value>50, 26</value>
   </data>
   <data name="cost1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -418,10 +442,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="transmission1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 116</value>
+    <value>135, 94</value>
+  </data>
+  <data name="transmission1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="transmission1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 33</value>
+    <value>110, 26</value>
   </data>
   <data name="transmission1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -454,10 +481,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="brand1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 76</value>
+    <value>135, 62</value>
+  </data>
+  <data name="brand1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="brand1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 33</value>
+    <value>59, 26</value>
   </data>
   <data name="brand1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -487,10 +517,13 @@
     <value>Rockwell Condensed, 19.8pt</value>
   </data>
   <data name="model1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 12</value>
+    <value>90, 10</value>
+  </data>
+  <data name="model1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="model1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 39</value>
+    <value>82, 31</value>
   </data>
   <data name="model1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -511,10 +544,13 @@
     <value>10</value>
   </data>
   <data name="car1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 283</value>
+    <value>20, 230</value>
+  </data>
+  <data name="car1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="car1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 310</value>
+    <value>262, 252</value>
   </data>
   <data name="car1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -541,10 +577,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 236</value>
+    <value>25, 192</value>
+  </data>
+  <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 33</value>
+    <value>73, 26</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -577,10 +616,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 196</value>
+    <value>25, 159</value>
+  </data>
+  <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 33</value>
+    <value>53, 26</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -613,10 +655,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 156</value>
+    <value>25, 127</value>
+  </data>
+  <data name="label8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 33</value>
+    <value>46, 26</value>
   </data>
   <data name="label8.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -649,10 +694,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 116</value>
+    <value>25, 94</value>
+  </data>
+  <data name="label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 33</value>
+    <value>106, 26</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -685,10 +733,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 76</value>
+    <value>25, 62</value>
+  </data>
+  <data name="label10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 33</value>
+    <value>55, 26</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -721,10 +772,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="platenum2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 236</value>
+    <value>135, 192</value>
+  </data>
+  <data name="platenum2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="platenum2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 33</value>
+    <value>77, 26</value>
   </data>
   <data name="platenum2.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -757,10 +811,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="seats2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 196</value>
+    <value>135, 159</value>
+  </data>
+  <data name="seats2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="seats2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 33</value>
+    <value>57, 26</value>
   </data>
   <data name="seats2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -793,10 +850,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="cost2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 156</value>
+    <value>135, 127</value>
+  </data>
+  <data name="cost2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="cost2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 33</value>
+    <value>50, 26</value>
   </data>
   <data name="cost2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -829,10 +889,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="transmission2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 116</value>
+    <value>135, 94</value>
+  </data>
+  <data name="transmission2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="transmission2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 33</value>
+    <value>110, 26</value>
   </data>
   <data name="transmission2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -865,10 +928,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="brand2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 76</value>
+    <value>135, 62</value>
+  </data>
+  <data name="brand2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="brand2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 33</value>
+    <value>59, 26</value>
   </data>
   <data name="brand2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -898,10 +964,13 @@
     <value>Rockwell Condensed, 19.8pt</value>
   </data>
   <data name="model2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 12</value>
+    <value>90, 10</value>
+  </data>
+  <data name="model2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="model2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 39</value>
+    <value>82, 31</value>
   </data>
   <data name="model2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -922,10 +991,13 @@
     <value>10</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>401, 283</value>
+    <value>301, 230</value>
+  </data>
+  <data name="panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 310</value>
+    <value>262, 252</value>
   </data>
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -952,10 +1024,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 236</value>
+    <value>25, 192</value>
+  </data>
+  <data name="label17.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 33</value>
+    <value>73, 26</value>
   </data>
   <data name="label17.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -988,10 +1063,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 196</value>
+    <value>25, 159</value>
+  </data>
+  <data name="label18.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 33</value>
+    <value>53, 26</value>
   </data>
   <data name="label18.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1024,10 +1102,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label19.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 156</value>
+    <value>25, 127</value>
+  </data>
+  <data name="label19.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 33</value>
+    <value>46, 26</value>
   </data>
   <data name="label19.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1060,10 +1141,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 116</value>
+    <value>25, 94</value>
+  </data>
+  <data name="label20.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 33</value>
+    <value>106, 26</value>
   </data>
   <data name="label20.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1096,10 +1180,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label21.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 76</value>
+    <value>25, 62</value>
+  </data>
+  <data name="label21.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 33</value>
+    <value>55, 26</value>
   </data>
   <data name="label21.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1132,10 +1219,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="platenum3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 236</value>
+    <value>135, 192</value>
+  </data>
+  <data name="platenum3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="platenum3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 33</value>
+    <value>77, 26</value>
   </data>
   <data name="platenum3.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1168,10 +1258,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="seats3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 196</value>
+    <value>135, 159</value>
+  </data>
+  <data name="seats3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="seats3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 33</value>
+    <value>57, 26</value>
   </data>
   <data name="seats3.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1204,10 +1297,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="cost3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 156</value>
+    <value>135, 127</value>
+  </data>
+  <data name="cost3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="cost3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 33</value>
+    <value>50, 26</value>
   </data>
   <data name="cost3.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1240,10 +1336,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="transmission3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 116</value>
+    <value>135, 94</value>
+  </data>
+  <data name="transmission3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="transmission3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 33</value>
+    <value>110, 26</value>
   </data>
   <data name="transmission3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1276,10 +1375,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="brand3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 76</value>
+    <value>135, 62</value>
+  </data>
+  <data name="brand3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="brand3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 33</value>
+    <value>59, 26</value>
   </data>
   <data name="brand3.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1309,10 +1411,13 @@
     <value>Rockwell Condensed, 19.8pt</value>
   </data>
   <data name="model3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 12</value>
+    <value>90, 10</value>
+  </data>
+  <data name="model3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="model3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 39</value>
+    <value>82, 31</value>
   </data>
   <data name="model3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1333,10 +1438,13 @@
     <value>10</value>
   </data>
   <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 635</value>
+    <value>19, 516</value>
+  </data>
+  <data name="panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 310</value>
+    <value>262, 252</value>
   </data>
   <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1363,10 +1471,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label28.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 236</value>
+    <value>25, 192</value>
+  </data>
+  <data name="label28.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 33</value>
+    <value>73, 26</value>
   </data>
   <data name="label28.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1399,10 +1510,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label29.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 196</value>
+    <value>25, 159</value>
+  </data>
+  <data name="label29.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label29.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 33</value>
+    <value>53, 26</value>
   </data>
   <data name="label29.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1435,10 +1549,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label30.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 156</value>
+    <value>25, 127</value>
+  </data>
+  <data name="label30.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label30.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 33</value>
+    <value>46, 26</value>
   </data>
   <data name="label30.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1471,10 +1588,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label31.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 116</value>
+    <value>25, 94</value>
+  </data>
+  <data name="label31.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label31.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 33</value>
+    <value>106, 26</value>
   </data>
   <data name="label31.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1507,10 +1627,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label32.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 76</value>
+    <value>25, 62</value>
+  </data>
+  <data name="label32.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label32.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 33</value>
+    <value>55, 26</value>
   </data>
   <data name="label32.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1543,10 +1666,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="platenum4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 236</value>
+    <value>135, 192</value>
+  </data>
+  <data name="platenum4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="platenum4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 33</value>
+    <value>77, 26</value>
   </data>
   <data name="platenum4.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1579,10 +1705,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="seats4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 196</value>
+    <value>135, 159</value>
+  </data>
+  <data name="seats4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="seats4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 33</value>
+    <value>57, 26</value>
   </data>
   <data name="seats4.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -1615,10 +1744,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="cost4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 156</value>
+    <value>135, 127</value>
+  </data>
+  <data name="cost4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="cost4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 33</value>
+    <value>50, 26</value>
   </data>
   <data name="cost4.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1651,10 +1783,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="transmission4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 116</value>
+    <value>135, 94</value>
+  </data>
+  <data name="transmission4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="transmission4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 33</value>
+    <value>110, 26</value>
   </data>
   <data name="transmission4.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1687,10 +1822,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="brand4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 76</value>
+    <value>135, 62</value>
+  </data>
+  <data name="brand4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="brand4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 33</value>
+    <value>59, 26</value>
   </data>
   <data name="brand4.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1720,10 +1858,13 @@
     <value>Rockwell Condensed, 19.8pt</value>
   </data>
   <data name="model4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 12</value>
+    <value>90, 10</value>
+  </data>
+  <data name="model4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="model4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 39</value>
+    <value>82, 31</value>
   </data>
   <data name="model4.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1744,10 +1885,13 @@
     <value>10</value>
   </data>
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>406, 635</value>
+    <value>304, 516</value>
+  </data>
+  <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 310</value>
+    <value>262, 252</value>
   </data>
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1777,10 +1921,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label39.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 236</value>
+    <value>25, 192</value>
+  </data>
+  <data name="label39.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label39.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 33</value>
+    <value>73, 26</value>
   </data>
   <data name="label39.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1813,10 +1960,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label40.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 196</value>
+    <value>25, 159</value>
+  </data>
+  <data name="label40.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label40.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 33</value>
+    <value>53, 26</value>
   </data>
   <data name="label40.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1849,10 +1999,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label41.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 156</value>
+    <value>25, 127</value>
+  </data>
+  <data name="label41.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label41.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 33</value>
+    <value>46, 26</value>
   </data>
   <data name="label41.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -1885,10 +2038,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label42.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 116</value>
+    <value>25, 94</value>
+  </data>
+  <data name="label42.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label42.Size" type="System.Drawing.Size, System.Drawing">
-    <value>137, 33</value>
+    <value>106, 26</value>
   </data>
   <data name="label42.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1921,10 +2077,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="label43.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 76</value>
+    <value>25, 62</value>
+  </data>
+  <data name="label43.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="label43.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 33</value>
+    <value>55, 26</value>
   </data>
   <data name="label43.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -1957,10 +2116,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="platenum5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 236</value>
+    <value>135, 192</value>
+  </data>
+  <data name="platenum5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="platenum5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 33</value>
+    <value>77, 26</value>
   </data>
   <data name="platenum5.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1993,10 +2155,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="seats5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 196</value>
+    <value>135, 159</value>
+  </data>
+  <data name="seats5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="seats5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 33</value>
+    <value>57, 26</value>
   </data>
   <data name="seats5.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2029,10 +2194,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="cost5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 156</value>
+    <value>135, 127</value>
+  </data>
+  <data name="cost5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="cost5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 33</value>
+    <value>50, 26</value>
   </data>
   <data name="cost5.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -2065,10 +2233,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="transmission5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 116</value>
+    <value>135, 94</value>
+  </data>
+  <data name="transmission5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="transmission5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 33</value>
+    <value>110, 26</value>
   </data>
   <data name="transmission5.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -2101,10 +2272,13 @@
     <value>Rockwell Condensed, 16.2pt</value>
   </data>
   <data name="brand5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 76</value>
+    <value>135, 62</value>
+  </data>
+  <data name="brand5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="brand5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 33</value>
+    <value>59, 26</value>
   </data>
   <data name="brand5.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2134,10 +2308,13 @@
     <value>Rockwell Condensed, 19.8pt</value>
   </data>
   <data name="model5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 12</value>
+    <value>90, 10</value>
+  </data>
+  <data name="model5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 2, 0</value>
   </data>
   <data name="model5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 39</value>
+    <value>82, 31</value>
   </data>
   <data name="model5.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -2158,10 +2335,13 @@
     <value>10</value>
   </data>
   <data name="panel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 1009</value>
+    <value>19, 820</value>
+  </data>
+  <data name="panel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="panel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 310</value>
+    <value>262, 252</value>
   </data>
   <data name="panel4.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -2182,10 +2362,13 @@
     <value>Rockwell Condensed, 19.8pt</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 557</value>
+    <value>78, 453</value>
+  </data>
+  <data name="button1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 50</value>
+    <value>134, 41</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -2209,10 +2392,13 @@
     <value>Rockwell Condensed, 19.8pt</value>
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>506, 557</value>
+    <value>380, 453</value>
+  </data>
+  <data name="button2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 50</value>
+    <value>134, 41</value>
   </data>
   <data name="button2.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -2236,10 +2422,13 @@
     <value>Rockwell Condensed, 19.8pt</value>
   </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>104, 922</value>
+    <value>78, 749</value>
+  </data>
+  <data name="button3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 50</value>
+    <value>134, 41</value>
   </data>
   <data name="button3.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -2263,10 +2452,13 @@
     <value>Rockwell Condensed, 19.8pt</value>
   </data>
   <data name="button4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>506, 922</value>
+    <value>380, 749</value>
+  </data>
+  <data name="button4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="button4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 50</value>
+    <value>134, 41</value>
   </data>
   <data name="button4.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -2290,10 +2482,13 @@
     <value>Rockwell Condensed, 19.8pt</value>
   </data>
   <data name="button5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>105, 1298</value>
+    <value>79, 1055</value>
+  </data>
+  <data name="button5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="button5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 50</value>
+    <value>134, 41</value>
   </data>
   <data name="button5.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -2314,10 +2509,13 @@
     <value>1</value>
   </data>
   <data name="exitButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>724, 12</value>
+    <value>543, 10</value>
+  </data>
+  <data name="exitButton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="exitButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 40</value>
+    <value>30, 32</value>
   </data>
   <data name="exitButton.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -2344,7 +2542,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
+    <value>6, 13</value>
   </data>
   <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2355,7 +2553,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAlgAAAOECAYAAAB97U88AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EgAACxIB0t1+/AAAwnFJREFUeF7tvQWUXMfVrn3vfxnXpXW/+yVOHKMsZmZmZmYGy2JmWRbYlklmkplR
+        EQAACxEBf2RfkQAAwnFJREFUeF7tvQWUXMfVrn3vfxnXpXW/+yVOHKMsZmZmZmYGy2JmWRbYlklmkplR
         RpmZY4w55thWDIntOPRl//VWd033jHqwpl4L3lrrsSVNT3fX7t27nlOnTp1/tWLqr2zJpKNs4YRj7MRx
         x9rcMcfZzFHH2/QRNWzKsBNs4pATbPygmjZmYC0b1b+WDe9b24b2rmODe9WxAT3qWv/uda1v17rWu0s9
         69m5nvXoVM+6dahnXdrXt87t6lmntvWtY5v61qFNA2vXqr6jgbVpWd/atGhgrR2tmjewlo4WzRxNG1hz
@@ -3188,8 +3386,14 @@
         AAAASUVORK5CYII=
 </value>
   </data>
+  <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>800, 800</value>
+    <value>600, 600</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
