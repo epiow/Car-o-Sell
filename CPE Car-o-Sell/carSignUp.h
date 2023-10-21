@@ -35,82 +35,111 @@ namespace CPECaroSell {
 		}
 
     private:
-        System::Windows::Forms::Label^ label1;
-        System::Windows::Forms::TextBox^ usernameTextBox;
+
+	private: System::Windows::Forms::TextBox^ emailTextBox;
+
         System::Windows::Forms::TextBox^ passwordTextBox;
         System::Windows::Forms::Button^ signUpButton;
-        System::Windows::Forms::Button^ cancelButton;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TextBox^ textBox2;
+		   System::Windows::Forms::Button^ cancelButton;
 
         void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->usernameTextBox = (gcnew System::Windows::Forms::TextBox());
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(carSignUp::typeid));
+			this->emailTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->passwordTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->signUpButton = (gcnew System::Windows::Forms::Button());
 			this->cancelButton = (gcnew System::Windows::Forms::Button());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
-			// label1
+			// emailTextBox
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(16, 11);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(142, 16);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Sign Up for an Account";
-			this->label1->Click += gcnew System::EventHandler(this, &carSignUp::label1_Click);
-			// 
-			// usernameTextBox
-			// 
-			this->usernameTextBox->Location = System::Drawing::Point(16, 43);
-			this->usernameTextBox->Margin = System::Windows::Forms::Padding(4);
-			this->usernameTextBox->Name = L"usernameTextBox";
-			this->usernameTextBox->Size = System::Drawing::Size(265, 22);
-			this->usernameTextBox->TabIndex = 1;
+			this->emailTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->emailTextBox->Font = (gcnew System::Drawing::Font(L"SansSerif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(2)));
+			this->emailTextBox->Location = System::Drawing::Point(211, 315);
+			this->emailTextBox->Name = L"emailTextBox";
+			this->emailTextBox->Size = System::Drawing::Size(331, 28);
+			this->emailTextBox->TabIndex = 1;
 			// 
 			// passwordTextBox
 			// 
-			this->passwordTextBox->Location = System::Drawing::Point(16, 75);
-			this->passwordTextBox->Margin = System::Windows::Forms::Padding(4);
+			this->passwordTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->passwordTextBox->Font = (gcnew System::Drawing::Font(L"SansSerif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(2)));
+			this->passwordTextBox->Location = System::Drawing::Point(211, 487);
 			this->passwordTextBox->Name = L"passwordTextBox";
-			this->passwordTextBox->Size = System::Drawing::Size(265, 22);
+			this->passwordTextBox->Size = System::Drawing::Size(331, 28);
 			this->passwordTextBox->TabIndex = 2;
 			this->passwordTextBox->UseSystemPasswordChar = true;
 			// 
 			// signUpButton
 			// 
-			this->signUpButton->Location = System::Drawing::Point(16, 107);
-			this->signUpButton->Margin = System::Windows::Forms::Padding(4);
+			this->signUpButton->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->signUpButton->FlatAppearance->BorderSize = 0;
+			this->signUpButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->signUpButton->Font = (gcnew System::Drawing::Font(L"Designer", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->signUpButton->Location = System::Drawing::Point(211, 634);
 			this->signUpButton->Name = L"signUpButton";
-			this->signUpButton->Size = System::Drawing::Size(125, 28);
+			this->signUpButton->Size = System::Drawing::Size(136, 41);
 			this->signUpButton->TabIndex = 3;
 			this->signUpButton->Text = L"Sign Up";
+			this->signUpButton->UseVisualStyleBackColor = false;
 			this->signUpButton->Click += gcnew System::EventHandler(this, &carSignUp::signUpButton_Click);
 			// 
 			// cancelButton
 			// 
-			this->cancelButton->Location = System::Drawing::Point(157, 107);
-			this->cancelButton->Margin = System::Windows::Forms::Padding(4);
+			this->cancelButton->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->cancelButton->FlatAppearance->BorderSize = 0;
+			this->cancelButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->cancelButton->Font = (gcnew System::Drawing::Font(L"Designer", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->cancelButton->Location = System::Drawing::Point(406, 634);
 			this->cancelButton->Name = L"cancelButton";
-			this->cancelButton->Size = System::Drawing::Size(125, 28);
+			this->cancelButton->Size = System::Drawing::Size(127, 41);
 			this->cancelButton->TabIndex = 4;
 			this->cancelButton->Text = L"Cancel";
+			this->cancelButton->UseVisualStyleBackColor = false;
 			this->cancelButton->Click += gcnew System::EventHandler(this, &carSignUp::cancelButton_Click);
+			// 
+			// textBox1
+			// 
+			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"SansSerif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(2)));
+			this->textBox1->Location = System::Drawing::Point(211, 400);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(331, 28);
+			this->textBox1->TabIndex = 5;
+			// 
+			// textBox2
+			// 
+			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"SansSerif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(2)));
+			this->textBox2->Location = System::Drawing::Point(211, 574);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(331, 28);
+			this->textBox2->TabIndex = 6;
 			// 
 			// carSignUp
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
-			this->ClientSize = System::Drawing::Size(299, 155);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->ClientSize = System::Drawing::Size(750, 750);
+			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->cancelButton);
 			this->Controls->Add(this->signUpButton);
 			this->Controls->Add(this->passwordTextBox);
-			this->Controls->Add(this->usernameTextBox);
-			this->Controls->Add(this->label1);
+			this->Controls->Add(this->emailTextBox);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"carSignUp";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Sign Up";
