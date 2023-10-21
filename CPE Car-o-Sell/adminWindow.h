@@ -211,15 +211,15 @@ namespace CPECaroSell {
 			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::False;
 			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle2;
 			this->dataGridView1->GridColor = System::Drawing::SystemColors::Window;
-			this->dataGridView1->Location = System::Drawing::Point(315, 143);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
+			this->dataGridView1->Location = System::Drawing::Point(420, 176);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersBorderStyle = System::Windows::Forms::DataGridViewHeaderBorderStyle::Single;
 			this->dataGridView1->RowHeadersWidth = 5;
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->dataGridView1->Size = System::Drawing::Size(658, 487);
+			this->dataGridView1->Size = System::Drawing::Size(877, 599);
 			this->dataGridView1->StandardTab = true;
 			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &adminWindow::dataGridView1_CellContentClick);
@@ -232,10 +232,10 @@ namespace CPECaroSell {
 			this->button2->Font = (gcnew System::Drawing::Font(L"Designer", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->button2->Location = System::Drawing::Point(210, 553);
-			this->button2->Margin = System::Windows::Forms::Padding(2);
+			this->button2->Location = System::Drawing::Point(280, 681);
+			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(83, 32);
+			this->button2->Size = System::Drawing::Size(111, 39);
 			this->button2->TabIndex = 38;
 			this->button2->Text = L"Delete";
 			this->button2->UseVisualStyleBackColor = false;
@@ -248,10 +248,10 @@ namespace CPECaroSell {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Designer", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->button1->Location = System::Drawing::Point(128, 598);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
+			this->button1->Location = System::Drawing::Point(171, 736);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(74, 32);
+			this->button1->Size = System::Drawing::Size(99, 39);
 			this->button1->TabIndex = 37;
 			this->button1->Text = L"Edit";
 			this->button1->UseVisualStyleBackColor = false;
@@ -264,10 +264,10 @@ namespace CPECaroSell {
 			this->add->Font = (gcnew System::Drawing::Font(L"Designer", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->add->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->add->Location = System::Drawing::Point(31, 553);
-			this->add->Margin = System::Windows::Forms::Padding(2);
+			this->add->Location = System::Drawing::Point(41, 681);
+			this->add->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->add->Name = L"add";
-			this->add->Size = System::Drawing::Size(81, 32);
+			this->add->Size = System::Drawing::Size(108, 39);
 			this->add->TabIndex = 36;
 			this->add->Text = L"Add";
 			this->add->UseVisualStyleBackColor = false;
@@ -277,10 +277,10 @@ namespace CPECaroSell {
 			this->returnDate->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->returnDate->Font = (gcnew System::Drawing::Font(L"Sans Serif Collection", 6.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->returnDate->Location = System::Drawing::Point(189, 468);
-			this->returnDate->Margin = System::Windows::Forms::Padding(2);
+			this->returnDate->Location = System::Drawing::Point(252, 576);
+			this->returnDate->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->returnDate->Name = L"returnDate";
-			this->returnDate->Size = System::Drawing::Size(104, 23);
+			this->returnDate->Size = System::Drawing::Size(139, 28);
 			this->returnDate->TabIndex = 35;
 			// 
 			// platenum
@@ -288,10 +288,10 @@ namespace CPECaroSell {
 			this->platenum->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->platenum->Font = (gcnew System::Drawing::Font(L"Sans Serif Collection", 6.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->platenum->Location = System::Drawing::Point(189, 387);
-			this->platenum->Margin = System::Windows::Forms::Padding(2);
+			this->platenum->Location = System::Drawing::Point(252, 476);
+			this->platenum->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->platenum->Name = L"platenum";
-			this->platenum->Size = System::Drawing::Size(104, 23);
+			this->platenum->Size = System::Drawing::Size(139, 28);
 			this->platenum->TabIndex = 34;
 			// 
 			// rentDate
@@ -299,10 +299,10 @@ namespace CPECaroSell {
 			this->rentDate->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->rentDate->Font = (gcnew System::Drawing::Font(L"Sans Serif Collection", 6.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->rentDate->Location = System::Drawing::Point(189, 428);
-			this->rentDate->Margin = System::Windows::Forms::Padding(2);
+			this->rentDate->Location = System::Drawing::Point(252, 527);
+			this->rentDate->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->rentDate->Name = L"rentDate";
-			this->rentDate->Size = System::Drawing::Size(104, 23);
+			this->rentDate->Size = System::Drawing::Size(139, 28);
 			this->rentDate->TabIndex = 33;
 			// 
 			// seats
@@ -310,10 +310,10 @@ namespace CPECaroSell {
 			this->seats->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->seats->Font = (gcnew System::Drawing::Font(L"Sans Serif Collection", 6.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->seats->Location = System::Drawing::Point(189, 345);
-			this->seats->Margin = System::Windows::Forms::Padding(2);
+			this->seats->Location = System::Drawing::Point(252, 425);
+			this->seats->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->seats->Name = L"seats";
-			this->seats->Size = System::Drawing::Size(104, 23);
+			this->seats->Size = System::Drawing::Size(139, 28);
 			this->seats->TabIndex = 29;
 			// 
 			// transmission
@@ -321,10 +321,10 @@ namespace CPECaroSell {
 			this->transmission->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->transmission->Font = (gcnew System::Drawing::Font(L"Sans Serif Collection", 6.749999F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->transmission->Location = System::Drawing::Point(189, 265);
-			this->transmission->Margin = System::Windows::Forms::Padding(2);
+			this->transmission->Location = System::Drawing::Point(252, 326);
+			this->transmission->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->transmission->Name = L"transmission";
-			this->transmission->Size = System::Drawing::Size(104, 23);
+			this->transmission->Size = System::Drawing::Size(139, 28);
 			this->transmission->TabIndex = 28;
 			// 
 			// cost
@@ -332,10 +332,10 @@ namespace CPECaroSell {
 			this->cost->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->cost->Font = (gcnew System::Drawing::Font(L"Sans Serif Collection", 6.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->cost->Location = System::Drawing::Point(189, 306);
-			this->cost->Margin = System::Windows::Forms::Padding(2);
+			this->cost->Location = System::Drawing::Point(252, 377);
+			this->cost->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->cost->Name = L"cost";
-			this->cost->Size = System::Drawing::Size(104, 23);
+			this->cost->Size = System::Drawing::Size(139, 28);
 			this->cost->TabIndex = 27;
 			// 
 			// brand
@@ -343,10 +343,10 @@ namespace CPECaroSell {
 			this->brand->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->brand->Font = (gcnew System::Drawing::Font(L"Sans Serif Collection", 6.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->brand->Location = System::Drawing::Point(189, 225);
-			this->brand->Margin = System::Windows::Forms::Padding(2);
+			this->brand->Location = System::Drawing::Point(252, 277);
+			this->brand->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->brand->Name = L"brand";
-			this->brand->Size = System::Drawing::Size(104, 23);
+			this->brand->Size = System::Drawing::Size(139, 28);
 			this->brand->TabIndex = 23;
 			// 
 			// transactID
@@ -357,31 +357,32 @@ namespace CPECaroSell {
 			this->transactID->Font = (gcnew System::Drawing::Font(L"Sans Serif Collection", 6.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->transactID->ForeColor = System::Drawing::SystemColors::WindowText;
-			this->transactID->Location = System::Drawing::Point(189, 143);
-			this->transactID->Margin = System::Windows::Forms::Padding(2);
+			this->transactID->Location = System::Drawing::Point(252, 176);
+			this->transactID->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->transactID->Name = L"transactID";
-			this->transactID->Size = System::Drawing::Size(104, 23);
+			this->transactID->Size = System::Drawing::Size(139, 28);
 			this->transactID->TabIndex = 22;
 			// 
 			// exitButton
 			// 
 			this->exitButton->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->exitButton->Location = System::Drawing::Point(943, 22);
-			this->exitButton->Margin = System::Windows::Forms::Padding(2);
+			this->exitButton->Location = System::Drawing::Point(1257, 27);
+			this->exitButton->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->exitButton->Name = L"exitButton";
-			this->exitButton->Size = System::Drawing::Size(30, 32);
+			this->exitButton->Size = System::Drawing::Size(40, 39);
 			this->exitButton->TabIndex = 18;
 			this->exitButton->Text = L"X";
+			this->exitButton->Click += gcnew System::EventHandler(this, &adminWindow::exitButton_Click);
 			// 
 			// model
 			// 
 			this->model->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->model->Font = (gcnew System::Drawing::Font(L"Sans Serif Collection", 6.749999F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->model->Location = System::Drawing::Point(189, 184);
-			this->model->Margin = System::Windows::Forms::Padding(2);
+			this->model->Location = System::Drawing::Point(252, 226);
+			this->model->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->model->Name = L"model";
-			this->model->Size = System::Drawing::Size(104, 23);
+			this->model->Size = System::Drawing::Size(139, 28);
 			this->model->TabIndex = 40;
 			// 
 			// approval
@@ -390,20 +391,21 @@ namespace CPECaroSell {
 			this->approval->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->approval->FormattingEnabled = true;
 			this->approval->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"TRUE", L"FALSE" });
-			this->approval->Location = System::Drawing::Point(189, 510);
+			this->approval->Location = System::Drawing::Point(252, 628);
+			this->approval->Margin = System::Windows::Forms::Padding(4);
 			this->approval->Name = L"approval";
-			this->approval->Size = System::Drawing::Size(104, 21);
+			this->approval->Size = System::Drawing::Size(137, 24);
 			this->approval->TabIndex = 41;
 			// 
 			// adminWindow
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScrollMargin = System::Drawing::Size(0, 25);
 			this->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1000, 650);
+			this->ClientSize = System::Drawing::Size(1333, 800);
 			this->Controls->Add(this->approval);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->button2);
@@ -421,7 +423,7 @@ namespace CPECaroSell {
 			this->Controls->Add(this->seats);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"adminWindow";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"adminWindow";
@@ -432,7 +434,7 @@ namespace CPECaroSell {
 
 		}
 #pragma endregion
-	
+public: User^ user = nullptr;
 
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	
@@ -442,6 +444,12 @@ private: System::Void dataGridView1_CellContentClick(System::Object^ sender, Sys
 }
 
 private: System::Void adminWindow_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+
+public: bool switchToLogin = false;
+private: System::Void exitButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	switchToLogin = true;
+	this->Close();
 }
 };
 }

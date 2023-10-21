@@ -6,7 +6,6 @@
 #include <fstream>
 #include <sstream>
 #include "user.h"
-#include "adminWindow.h"
 
 namespace CPECaroSell {
 
@@ -314,6 +313,7 @@ namespace CPECaroSell {
         public: User^ user = nullptr;
 
         public: bool SwitchToMain = false;
+        public: bool SwitchToAdmin = false;
         System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e)
         {
             String^ username = usernameTextBox->Text;
@@ -323,8 +323,7 @@ namespace CPECaroSell {
 
             if (admin)
             {
-                adminWindow^ obj = gcnew adminWindow();
-                obj->ShowDialog();
+                SwitchToAdmin = true;
                 this->Close();
             }
             else if(authenticated){

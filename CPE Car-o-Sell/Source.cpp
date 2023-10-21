@@ -2,6 +2,7 @@
 #include "carLogin.h"
 #include "userMainWindow.h"
 #include "rentWindow.h"
+#include "adminWindow.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -11,39 +12,55 @@ User^ AuthenticateUser()
     while (true)
     {
         User^ user = nullptr;
-        CPECaroSell::userMainwindow registerForm;
+        CPECaroSell::userMainwindow mainWinForm;
         CPECaroSell::carLogin loginForm;
+        CPECaroSell::adminWindow adminMainForm;
         loginForm.ShowDialog();
 
 
         if (loginForm.SwitchToMain)
         {
             
-            registerForm.ShowDialog();
+            mainWinForm.ShowDialog();
 
-            if (registerForm.switchToLogin)
+            if (mainWinForm.switchToLogin)
             {
                 continue;
             }
+            else if (mainWinForm.switchToRentForm)
+            {
+                CPECaroSell::rentWindow mainForm(user);
+                mainForm.ShowDialog();
+
+                if (mainForm.switchBackToUserMain)
+                {
+                    continue;
+                }
+                else
+                {
+                    break; // Exiting the program
+                }
+            }
             else
             {
-                return registerForm.user;
+                return mainWinForm.user;
             }
         }
-        else if (registerForm.switchToRentForm) 
+        else if (loginForm.SwitchToAdmin)
         {
-            CPECaroSell::rentWindow mainForm(user);
-            mainForm.ShowDialog();
+            adminMainForm.ShowDialog();
 
-            if (mainForm.switchBackToUserMain)
+            if (adminMainForm.switchToLogin)
             {
                 continue;
             }
             else
             {
-                break; // Exiting the program
+                return adminMainForm.user;
             }
         }
+        
+
         else
         {
             return loginForm.user;
