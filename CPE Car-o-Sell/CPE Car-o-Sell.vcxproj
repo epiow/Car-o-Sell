@@ -126,6 +126,7 @@
     <ClCompile Include="carLogin.cpp" />
     <ClCompile Include="carSignUp.cpp" />
     <ClCompile Include="rentWindow.cpp" />
+    <ClCompile Include="sellList.cpp" />
     <ClCompile Include="sellWindow.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="userMainWindow.cpp" />
@@ -144,6 +145,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="rentWindow.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="sellList.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="sellWindow.h">
