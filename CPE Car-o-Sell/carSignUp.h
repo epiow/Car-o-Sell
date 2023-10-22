@@ -40,8 +40,10 @@ namespace CPECaroSell {
 
         System::Windows::Forms::TextBox^ passwordTextBox;
         System::Windows::Forms::Button^ signUpButton;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ usernameTextBox;
+	private: System::Windows::Forms::TextBox^ confirmPasswordTextBox;
+
+
 		   System::Windows::Forms::Button^ cancelButton;
 
         void InitializeComponent(void)
@@ -51,8 +53,8 @@ namespace CPECaroSell {
 			this->passwordTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->signUpButton = (gcnew System::Windows::Forms::Button());
 			this->cancelButton = (gcnew System::Windows::Forms::Button());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->usernameTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->confirmPasswordTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// emailTextBox
@@ -106,25 +108,26 @@ namespace CPECaroSell {
 			this->cancelButton->UseVisualStyleBackColor = false;
 			this->cancelButton->Click += gcnew System::EventHandler(this, &carSignUp::cancelButton_Click);
 			// 
-			// textBox1
+			// usernameTextBox
 			// 
-			this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"SansSerif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->usernameTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->usernameTextBox->Font = (gcnew System::Drawing::Font(L"SansSerif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(2)));
-			this->textBox1->Location = System::Drawing::Point(211, 400);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(331, 28);
-			this->textBox1->TabIndex = 5;
+			this->usernameTextBox->Location = System::Drawing::Point(211, 400);
+			this->usernameTextBox->Name = L"usernameTextBox";
+			this->usernameTextBox->Size = System::Drawing::Size(331, 28);
+			this->usernameTextBox->TabIndex = 5;
+			this->usernameTextBox->TextChanged += gcnew System::EventHandler(this, &carSignUp::usernameTextBox_TextChanged);
 			// 
-			// textBox2
+			// confirmPasswordTextBox
 			// 
-			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"SansSerif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->confirmPasswordTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->confirmPasswordTextBox->Font = (gcnew System::Drawing::Font(L"SansSerif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(2)));
-			this->textBox2->Location = System::Drawing::Point(211, 574);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(331, 28);
-			this->textBox2->TabIndex = 6;
+			this->confirmPasswordTextBox->Location = System::Drawing::Point(211, 574);
+			this->confirmPasswordTextBox->Name = L"confirmPasswordTextBox";
+			this->confirmPasswordTextBox->Size = System::Drawing::Size(331, 28);
+			this->confirmPasswordTextBox->TabIndex = 6;
 			// 
 			// carSignUp
 			// 
@@ -133,8 +136,8 @@ namespace CPECaroSell {
 			this->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(750, 750);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->confirmPasswordTextBox);
+			this->Controls->Add(this->usernameTextBox);
 			this->Controls->Add(this->cancelButton);
 			this->Controls->Add(this->signUpButton);
 			this->Controls->Add(this->passwordTextBox);
@@ -235,6 +238,8 @@ namespace CPECaroSell {
 	private: System::Void carSignUp_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void usernameTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
