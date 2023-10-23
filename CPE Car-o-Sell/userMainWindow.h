@@ -72,20 +72,20 @@ namespace CPECaroSell {
 			// 
 			this->sellBtn->Font = (gcnew System::Drawing::Font(L"Cooper Black", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->sellBtn->Location = System::Drawing::Point(302, 507);
-			this->sellBtn->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->sellBtn->Location = System::Drawing::Point(226, 412);
+			this->sellBtn->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->sellBtn->Name = L"sellBtn";
-			this->sellBtn->Size = System::Drawing::Size(272, 158);
+			this->sellBtn->Size = System::Drawing::Size(204, 128);
 			this->sellBtn->TabIndex = 1;
 			this->sellBtn->Text = L"SELL";
 			this->sellBtn->UseVisualStyleBackColor = true;
+			this->sellBtn->Click += gcnew System::EventHandler(this, &userMainwindow::sellBtn_Click);
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(13, 13);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Location = System::Drawing::Point(10, 11);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(100, 28);
+			this->button1->Size = System::Drawing::Size(75, 23);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"<---";
 			this->button1->UseVisualStyleBackColor = true;
@@ -94,10 +94,9 @@ namespace CPECaroSell {
 			// button2
 			// 
 			this->button2->Font = (gcnew System::Drawing::Font(L"Cooper Black", 12));
-			this->button2->Location = System::Drawing::Point(302, 259);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Location = System::Drawing::Point(226, 210);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(272, 191);
+			this->button2->Size = System::Drawing::Size(204, 155);
 			this->button2->TabIndex = 3;
 			this->button2->Text = L"RENT";
 			this->button2->UseVisualStyleBackColor = true;
@@ -105,16 +104,16 @@ namespace CPECaroSell {
 			// 
 			// userMainwindow
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::ControlDark;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(987, 800);
+			this->ClientSize = System::Drawing::Size(740, 650);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->sellBtn);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"userMainwindow";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"MyForm";
@@ -141,5 +140,10 @@ namespace CPECaroSell {
 		switchToRentForm = true;
 		this->Close();
 	}
+	public: bool switchToSellWindow = false;
+	private: System::Void sellBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+		switchToSellWindow = true;
+		this->Close();
+}
 };
 }
