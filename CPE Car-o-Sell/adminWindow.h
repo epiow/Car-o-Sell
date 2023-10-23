@@ -65,20 +65,22 @@ namespace CPECaroSell {
 	private: System::Windows::Forms::TextBox^ rentDate;
 
 
-
+	
 
 
 	private: System::Windows::Forms::TextBox^ seats;
 
 	private: System::Windows::Forms::TextBox^ transmission;
 	private: System::Windows::Forms::TextBox^ cost;
+	private: System::Windows::Forms::Button^ addBtn;
+	private: System::Windows::Forms::Button^ deleteBtn;
 
 
 
 
 
-	private: System::Windows::Forms::Button^ add;
-	private: System::Windows::Forms::Button^ button2;
+
+
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ exitButton;
 
@@ -95,6 +97,18 @@ namespace CPECaroSell {
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
+	private: void ClearInputFields() {
+		transactID->Text = "";
+		model->Text = "";
+		brand->Text = "";
+		transmission->Text = "";
+		cost->Text = "";
+		seats->Text = "";
+		platenum->Text = "";
+		rentDate->Text = "";
+		returnDate->Text = "";
+		approval->Text = "";
+	}
 		void adminWindow::PopulateDataGridView(const std::string& filename)
 		{
 			std::ifstream file(filename);
@@ -163,9 +177,9 @@ namespace CPECaroSell {
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(adminWindow::typeid));
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->deleteBtn = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->add = (gcnew System::Windows::Forms::Button());
+			this->addBtn = (gcnew System::Windows::Forms::Button());
 			this->returnDate = (gcnew System::Windows::Forms::TextBox());
 			this->platenum = (gcnew System::Windows::Forms::TextBox());
 			this->rentDate = (gcnew System::Windows::Forms::TextBox());
@@ -203,8 +217,8 @@ namespace CPECaroSell {
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
 			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Bebas Neue", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::ControlText;
 			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
 			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
@@ -224,28 +238,29 @@ namespace CPECaroSell {
 			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &adminWindow::dataGridView1_CellContentClick);
 			// 
-			// button2
+			// deleteBtn
 			// 
-			this->button2->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->button2->FlatAppearance->BorderSize = 0;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Designer", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->deleteBtn->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->deleteBtn->FlatAppearance->BorderSize = 0;
+			this->deleteBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->deleteBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->button2->Location = System::Drawing::Point(280, 681);
-			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(111, 39);
-			this->button2->TabIndex = 38;
-			this->button2->Text = L"Delete";
-			this->button2->UseVisualStyleBackColor = false;
+			this->deleteBtn->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->deleteBtn->Location = System::Drawing::Point(280, 681);
+			this->deleteBtn->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->deleteBtn->Name = L"deleteBtn";
+			this->deleteBtn->Size = System::Drawing::Size(111, 39);
+			this->deleteBtn->TabIndex = 38;
+			this->deleteBtn->Text = L"Delete";
+			this->deleteBtn->UseVisualStyleBackColor = false;
+			this->deleteBtn->Click += gcnew System::EventHandler(this, &adminWindow::deleteBtn_Click);
 			// 
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->button1->FlatAppearance->BorderSize = 0;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Designer", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->button1->Location = System::Drawing::Point(171, 736);
@@ -256,21 +271,22 @@ namespace CPECaroSell {
 			this->button1->Text = L"Edit";
 			this->button1->UseVisualStyleBackColor = false;
 			// 
-			// add
+			// addBtn
 			// 
-			this->add->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->add->FlatAppearance->BorderSize = 0;
-			this->add->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->add->Font = (gcnew System::Drawing::Font(L"Designer", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->addBtn->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->addBtn->FlatAppearance->BorderSize = 0;
+			this->addBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->addBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->add->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			this->add->Location = System::Drawing::Point(41, 681);
-			this->add->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
-			this->add->Name = L"add";
-			this->add->Size = System::Drawing::Size(108, 39);
-			this->add->TabIndex = 36;
-			this->add->Text = L"Add";
-			this->add->UseVisualStyleBackColor = false;
+			this->addBtn->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->addBtn->Location = System::Drawing::Point(41, 681);
+			this->addBtn->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->addBtn->Name = L"addBtn";
+			this->addBtn->Size = System::Drawing::Size(108, 39);
+			this->addBtn->TabIndex = 36;
+			this->addBtn->Text = L"Add";
+			this->addBtn->UseVisualStyleBackColor = false;
+			this->addBtn->Click += gcnew System::EventHandler(this, &adminWindow::addBtn_Click);
 			// 
 			// returnDate
 			// 
@@ -408,10 +424,10 @@ namespace CPECaroSell {
 			this->ClientSize = System::Drawing::Size(1333, 800);
 			this->Controls->Add(this->approval);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->button2);
+			this->Controls->Add(this->deleteBtn);
 			this->Controls->Add(this->model);
 			this->Controls->Add(this->exitButton);
-			this->Controls->Add(this->add);
+			this->Controls->Add(this->addBtn);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->transactID);
 			this->Controls->Add(this->returnDate);
@@ -444,12 +460,74 @@ private: System::Void dataGridView1_CellContentClick(System::Object^ sender, Sys
 }
 
 private: System::Void adminWindow_Load(System::Object^ sender, System::EventArgs^ e) {
-}
+ }
 
 public: bool switchToLogin = false;
 private: System::Void exitButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	switchToLogin = true;
 	this->Close();
 }
+private: System::Void addBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+
+}
+private: System::Void deleteBtn_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (dataGridView1->CurrentCell == nullptr) {
+		MessageBox::Show(L"Please select a row to delete.");
+		return;
+	}
+
+	int selectedRowIndex = dataGridView1->CurrentCell->RowIndex;
+
+	String^ selectedTransactID = dataGridView1->Rows[selectedRowIndex]->Cells[0]->Value->ToString();
+
+	std::string filename = "Transaction.csv";
+	std::ifstream inFile(filename);
+	if (!inFile.is_open()) {
+		MessageBox::Show(L"Error. Unable to open the file for reading.");
+		return;
+	}
+
+	std::string tempFilename = "tempTransaction.csv";
+	std::ofstream outFile(tempFilename);
+	if (!outFile.is_open()) {
+		inFile.close();
+		MessageBox::Show(L"Error. Unable to open the temporary file for writing.");
+		return;
+	}
+
+	std::string header;
+	std::getline(inFile, header);
+	outFile << header << std::endl;
+
+	std::string row;
+	while (std::getline(inFile, row)) {
+		std::string cell;
+		std::stringstream ss(row);
+		std::getline(ss, cell, ','); 
+
+		
+
+		outFile << row << std::endl;
+	}
+
+	inFile.close();
+	outFile.close();
+
+	if (remove(filename.c_str()) != 0) {
+		MessageBox::Show(L"Error. Unable to delete the original file.");
+		return;
+	}
+
+	if (rename(tempFilename.c_str(), filename.c_str()) != 0) {
+		MessageBox::Show(L"Error. Unable to rename the temporary file.");
+		return;
+	}
+
+
+	PopulateDataGridView("Transaction.csv");
+
+	ClearInputFields();
+}
+
 };
 }

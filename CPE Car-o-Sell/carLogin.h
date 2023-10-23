@@ -172,15 +172,6 @@ namespace CPECaroSell {
                 this->Close();
             }
         }
-
-        //FIXED!!
-        /*System::Void signUpButton_Click(System::Object^ sender, System::EventArgs^ e)
-        {
-            carSignUp^ signUpWin = gcnew carSignUp();
-            signUpWin->Show();
-        }*/
-
-
         //DATABASE HANDLING GAMIT CSV
         void LoadUserCredentials(const std::string& filename)
         {

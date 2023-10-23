@@ -7,6 +7,7 @@
 using namespace System;
 using namespace System::Windows::Forms;
 
+
 User^ AuthenticateUser()
 {
     while (true)
@@ -34,6 +35,8 @@ User^ AuthenticateUser()
 
                 if (mainForm.switchBackToUserMain)
                 {
+                    CPECaroSell::calendar Calendar;
+                    Calendar.ShowDialog();
                     continue;
                 }
                 else
@@ -68,40 +71,10 @@ User^ AuthenticateUser()
     }
 }
 
-//void HandleUserSession()
-//{
-//    User^ user = nullptr;
-//    while (true)
-//    {
-//        user = AuthenticateUser();
-//
-//        if (user != nullptr)
-//        {
-//            CPECaroSell::rentWindow mainForm(user);
-//            mainForm.ShowDialog();
-//
-//            if (mainForm.switchBackToUserMain)
-//            {
-//                continue;
-//            }
-//            else
-//            {
-//                break; // Exiting the program
-//            }
-//        }
-//        else
-//        {
-//            break; // No user, exit program
-//        }
-//    }
-//}
-
 int main(array<String^>^ args)
 {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
-
-    //HandleUserSession();
 
     AuthenticateUser();
 
