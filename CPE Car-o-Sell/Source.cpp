@@ -1,8 +1,10 @@
 #include "userMainWindow.h"
 #include "carLogin.h"
+#include "sellWindow.h"
 #include "userMainWindow.h"
 #include "rentWindow.h"
 #include "adminWindow.h"
+#include "sellList.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -16,19 +18,20 @@ User^ AuthenticateUser()
         CPECaroSell::userMainwindow mainWinForm;
         CPECaroSell::carLogin loginForm;
         CPECaroSell::adminWindow adminMainForm;
+
         loginForm.ShowDialog();
 
 
         if (loginForm.SwitchToMain)
         {
-            
+
             mainWinForm.ShowDialog();
 
             if (mainWinForm.switchToLogin)
             {
                 continue;
             }
-            else if (mainWinForm.switchToRentForm)
+            while (mainWinForm.switchToRentForm)
             {
                 CPECaroSell::rentWindow mainForm(user);
                 mainForm.ShowDialog();
@@ -39,34 +42,42 @@ User^ AuthenticateUser()
                     Calendar.ShowDialog();
                     continue;
                 }
+            }
+
+            while (mainWinForm.switchToSellWindow)
+            {
+                CPECaroSell::sellWindow mainForm(user);
+                mainForm.ShowDialog();
+
+                if (mainForm.switchBackToUserMain)
+                {
+                    mainWinForm.switchToSellWindow = false;
+                }
+                if (mainForm.switchToSellList) {
+                    CPECaroSell::sellList SellList;
+                    SellList.ShowDialog();
+                }
+
+            }
+            if (loginForm.SwitchToAdmin)
+            {
+                adminMainForm.ShowDialog();
+
+                if (adminMainForm.switchToLogin)
+                {
+                    continue;
+                }
                 else
                 {
-                    break; // Exiting the program
+                    return adminMainForm.user;
                 }
             }
+
+
             else
             {
-                return mainWinForm.user;
+                return loginForm.user;
             }
-        }
-        else if (loginForm.SwitchToAdmin)
-        {
-            adminMainForm.ShowDialog();
-
-            if (adminMainForm.switchToLogin)
-            {
-                continue;
-            }
-            else
-            {
-                return adminMainForm.user;
-            }
-        }
-        
-
-        else
-        {
-            return loginForm.user;
         }
     }
 }
