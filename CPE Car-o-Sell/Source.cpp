@@ -33,27 +33,28 @@ User^ AuthenticateUser()
             }
             while (mainWinForm.switchToRentForm)
             {
-                CPECaroSell::rentWindow mainForm(user);
-                mainForm.ShowDialog();
+                CPECaroSell::rentWindow rentForm(user);
+                rentForm.ShowDialog();
 
-                if (mainForm.switchBackToUserMain)
+
+                if (rentForm.switchBackToUserMain)
                 {
-                    CPECaroSell::calendar Calendar;
-                    Calendar.ShowDialog();
-                    continue;
+                    //mainWinForm.ShowDialog();
+                    //mainWinForm.switchToRentForm = false;
                 }
+                mainWinForm.ShowDialog();
             }
 
             while (mainWinForm.switchToSellWindow)
             {
-                CPECaroSell::sellWindow mainForm(user);
-                mainForm.ShowDialog();
+                CPECaroSell::sellWindow sellForm(user);
+                sellForm.ShowDialog();
 
-                if (mainForm.switchBackToUserMain)
+                if (sellForm.switchBackToUserMain)
                 {
                     mainWinForm.switchToSellWindow = false;
                 }
-                if (mainForm.switchToSellList) {
+                if (sellForm.switchToSellList) {
                     CPECaroSell::sellList SellList;
                     SellList.ShowDialog();
                 }

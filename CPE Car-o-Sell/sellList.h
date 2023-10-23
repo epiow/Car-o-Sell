@@ -25,7 +25,7 @@ namespace CPECaroSell {
 		sellList(void)
 		{
 			InitializeComponent();
-			PopulateDataGridView("Test.csv");
+			PopulateDataGridView("Transaction.csv");
 
 		}
 
@@ -162,6 +162,7 @@ namespace CPECaroSell {
 			this->backButton->TabIndex = 1;
 			this->backButton->Text = L"Back";
 			this->backButton->UseVisualStyleBackColor = false;
+			this->backButton->Click += gcnew System::EventHandler(this, &sellList::backButton_Click);
 			// 
 			// dataGridView1
 			// 
@@ -243,6 +244,11 @@ namespace CPECaroSell {
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
 private: System::Void sellList_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+public: bool switchBackTosellWindow = false;
+private: System::Void backButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
+	switchBackTosellWindow = true;
+	this->Close();
 }
 };
 }
