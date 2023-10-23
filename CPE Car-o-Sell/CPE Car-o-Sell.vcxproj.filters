@@ -64,7 +64,7 @@
     <None Include="UserData.csv">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="Test.csv">
+    <None Include="Transaction.csv">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

@@ -172,7 +172,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Test.csv" />
+    <None Include="Transaction.csv" />
     <None Include="UserData.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

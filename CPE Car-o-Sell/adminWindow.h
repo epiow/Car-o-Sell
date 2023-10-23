@@ -24,7 +24,7 @@ namespace CPECaroSell {
 		adminWindow(void)
 		{
 			InitializeComponent();
-			PopulateDataGridView("Test.csv");
+			PopulateDataGridView("Transaction.csv");
 			
 		}
 
