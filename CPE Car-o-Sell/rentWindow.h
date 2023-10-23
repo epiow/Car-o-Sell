@@ -26,7 +26,7 @@ namespace CPECaroSell {
 		rentWindow(User^ user)
 		{
 			InitializeComponent();
-			Loadcarinfo("Test.csv");
+			Loadcarinfo("Transaction.csv");
 		}
 
 	protected:
