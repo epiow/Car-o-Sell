@@ -40,26 +40,25 @@ namespace CPECaroSell {
         System::Windows::Forms::Button^ signUpButton;
 
         array<String^, 2>^ userCredentials;
-    private: System::Windows::Forms::BindingNavigator^ bindingNavigator1;
+
     private: System::ComponentModel::IContainer^ components;
-    private: System::Windows::Forms::ToolStripButton^ bindingNavigatorAddNewItem;
-    private: System::Windows::Forms::ToolStripLabel^ bindingNavigatorCountItem;
-    private: System::Windows::Forms::ToolStripButton^ bindingNavigatorDeleteItem;
-    private: System::Windows::Forms::ToolStripButton^ bindingNavigatorMoveFirstItem;
-    private: System::Windows::Forms::ToolStripButton^ bindingNavigatorMovePreviousItem;
-    private: System::Windows::Forms::ToolStripSeparator^ bindingNavigatorSeparator;
-    private: System::Windows::Forms::ToolStripTextBox^ bindingNavigatorPositionItem;
-    private: System::Windows::Forms::ToolStripSeparator^ bindingNavigatorSeparator1;
-    private: System::Windows::Forms::ToolStripButton^ bindingNavigatorMoveNextItem;
-    private: System::Windows::Forms::ToolStripButton^ bindingNavigatorMoveLastItem;
-    private: System::Windows::Forms::ToolStripSeparator^ bindingNavigatorSeparator2;
+
+
+
+
+
+
+
+
+
+
+
            bool loginSuccessful;
 
 
 
         void InitializeComponent(void)
         {
-            this->components = (gcnew System::ComponentModel::Container());
             System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(carLogin::typeid));
             this->usernameTextBox = (gcnew System::Windows::Forms::TextBox());
             this->passwordTextBox = (gcnew System::Windows::Forms::TextBox());
@@ -68,40 +67,38 @@ namespace CPECaroSell {
             this->label2 = (gcnew System::Windows::Forms::Label());
             this->exitButton = (gcnew System::Windows::Forms::Button());
             this->signUpButton = (gcnew System::Windows::Forms::Button());
-            this->bindingNavigator1 = (gcnew System::Windows::Forms::BindingNavigator(this->components));
-            this->bindingNavigatorMoveFirstItem = (gcnew System::Windows::Forms::ToolStripButton());
-            this->bindingNavigatorMovePreviousItem = (gcnew System::Windows::Forms::ToolStripButton());
-            this->bindingNavigatorSeparator = (gcnew System::Windows::Forms::ToolStripSeparator());
-            this->bindingNavigatorPositionItem = (gcnew System::Windows::Forms::ToolStripTextBox());
-            this->bindingNavigatorCountItem = (gcnew System::Windows::Forms::ToolStripLabel());
-            this->bindingNavigatorSeparator1 = (gcnew System::Windows::Forms::ToolStripSeparator());
-            this->bindingNavigatorMoveNextItem = (gcnew System::Windows::Forms::ToolStripButton());
-            this->bindingNavigatorMoveLastItem = (gcnew System::Windows::Forms::ToolStripButton());
-            this->bindingNavigatorSeparator2 = (gcnew System::Windows::Forms::ToolStripSeparator());
-            this->bindingNavigatorAddNewItem = (gcnew System::Windows::Forms::ToolStripButton());
-            this->bindingNavigatorDeleteItem = (gcnew System::Windows::Forms::ToolStripButton());
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingNavigator1))->BeginInit();
-            this->bindingNavigator1->SuspendLayout();
             this->SuspendLayout();
+            // 
+            // usernameTextBox
+            // 
             this->usernameTextBox->Anchor = System::Windows::Forms::AnchorStyles::None;
             this->usernameTextBox->Location = System::Drawing::Point(29, 298);
             this->usernameTextBox->Name = L"usernameTextBox";
             this->usernameTextBox->Size = System::Drawing::Size(212, 22);
             this->usernameTextBox->TabIndex = 0;
             this->usernameTextBox->TextChanged += gcnew System::EventHandler(this, &carLogin::usernameTextBox_TextChanged);
+            // 
+            // passwordTextBox
+            // 
             this->passwordTextBox->Anchor = System::Windows::Forms::AnchorStyles::None;
             this->passwordTextBox->Location = System::Drawing::Point(29, 393);
             this->passwordTextBox->Name = L"passwordTextBox";
-            this->passwordTextBox->PasswordChar = 42;
+            this->passwordTextBox->PasswordChar = '*';
             this->passwordTextBox->Size = System::Drawing::Size(212, 22);
             this->passwordTextBox->TabIndex = 1;
             this->passwordTextBox->TextChanged += gcnew System::EventHandler(this, &carLogin::passwordTextBox_TextChanged);
+            // 
+            // loginButton
+            // 
             this->loginButton->Location = System::Drawing::Point(29, 621);
             this->loginButton->Name = L"loginButton";
             this->loginButton->Size = System::Drawing::Size(115, 36);
             this->loginButton->TabIndex = 2;
             this->loginButton->Text = L"Login";
             this->loginButton->Click += gcnew System::EventHandler(this, &carLogin::loginButton_Click);
+            // 
+            // label1
+            // 
             this->label1->AutoSize = true;
             this->label1->Font = (gcnew System::Drawing::Font(L"Rockwell Condensed", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
@@ -111,6 +108,9 @@ namespace CPECaroSell {
             this->label1->TabIndex = 4;
             this->label1->Text = L"USERNAME";
             this->label1->Click += gcnew System::EventHandler(this, &carLogin::label1_Click);
+            // 
+            // label2
+            // 
             this->label2->AutoSize = true;
             this->label2->Font = (gcnew System::Drawing::Font(L"Rockwell Condensed", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
@@ -120,97 +120,31 @@ namespace CPECaroSell {
             this->label2->TabIndex = 5;
             this->label2->Text = L"PASSWORD";
             this->label2->Click += gcnew System::EventHandler(this, &carLogin::label2_Click);
+            // 
+            // exitButton
+            // 
             this->exitButton->Location = System::Drawing::Point(750, 10);
             this->exitButton->Name = L"exitButton";
             this->exitButton->Size = System::Drawing::Size(40, 40);
             this->exitButton->TabIndex = 4;
             this->exitButton->Text = L"X";
             this->exitButton->Click += gcnew System::EventHandler(this, &carLogin::exitButton_Click);
+            // 
+            // signUpButton
+            // 
             this->signUpButton->Location = System::Drawing::Point(165, 621);
             this->signUpButton->Name = L"signUpButton";
             this->signUpButton->Size = System::Drawing::Size(107, 35);
             this->signUpButton->TabIndex = 6;
             this->signUpButton->Text = L"Sign Up";
             this->signUpButton->UseVisualStyleBackColor = true;
-            this->bindingNavigator1->AddNewItem = this->bindingNavigatorAddNewItem;
-            this->bindingNavigator1->CountItem = this->bindingNavigatorCountItem;
-            this->bindingNavigator1->DeleteItem = this->bindingNavigatorDeleteItem;
-            this->bindingNavigator1->ImageScalingSize = System::Drawing::Size(20, 20);
-            this->bindingNavigator1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(11) {
-                this->bindingNavigatorMoveFirstItem,
-                    this->bindingNavigatorMovePreviousItem, this->bindingNavigatorSeparator, this->bindingNavigatorPositionItem, this->bindingNavigatorCountItem,
-                    this->bindingNavigatorSeparator1, this->bindingNavigatorMoveNextItem, this->bindingNavigatorMoveLastItem, this->bindingNavigatorSeparator2,
-                    this->bindingNavigatorAddNewItem, this->bindingNavigatorDeleteItem
-            });
-            this->bindingNavigator1->Location = System::Drawing::Point(0, 0);
-            this->bindingNavigator1->MoveFirstItem = this->bindingNavigatorMoveFirstItem;
-            this->bindingNavigator1->MoveLastItem = this->bindingNavigatorMoveLastItem;
-            this->bindingNavigator1->MoveNextItem = this->bindingNavigatorMoveNextItem;
-            this->bindingNavigator1->MovePreviousItem = this->bindingNavigatorMovePreviousItem;
-            this->bindingNavigator1->Name = L"bindingNavigator1";
-            this->bindingNavigator1->PositionItem = this->bindingNavigatorPositionItem;
-            this->bindingNavigator1->Size = System::Drawing::Size(800, 27);
-            this->bindingNavigator1->TabIndex = 7;
-            this->bindingNavigator1->Text = L"bindingNavigator1";
-            this->bindingNavigator1->RefreshItems += gcnew System::EventHandler(this, &carLogin::bindingNavigator1_RefreshItems);
-            this->bindingNavigatorMoveFirstItem->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-            this->bindingNavigatorMoveFirstItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bindingNavigatorMoveFirstItem.Image")));
-            this->bindingNavigatorMoveFirstItem->Name = L"bindingNavigatorMoveFirstItem";
-            this->bindingNavigatorMoveFirstItem->RightToLeftAutoMirrorImage = true;
-            this->bindingNavigatorMoveFirstItem->Size = System::Drawing::Size(29, 24);
-            this->bindingNavigatorMoveFirstItem->Text = L"Move first";
-            this->bindingNavigatorMovePreviousItem->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-            this->bindingNavigatorMovePreviousItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bindingNavigatorMovePreviousItem.Image")));
-            this->bindingNavigatorMovePreviousItem->Name = L"bindingNavigatorMovePreviousItem";
-            this->bindingNavigatorMovePreviousItem->RightToLeftAutoMirrorImage = true;
-            this->bindingNavigatorMovePreviousItem->Size = System::Drawing::Size(29, 24);
-            this->bindingNavigatorMovePreviousItem->Text = L"Move previous";
-            this->bindingNavigatorSeparator->Name = L"bindingNavigatorSeparator";
-            this->bindingNavigatorSeparator->Size = System::Drawing::Size(6, 27);
-            this->bindingNavigatorPositionItem->AccessibleName = L"Position";
-            this->bindingNavigatorPositionItem->AutoSize = false;
-            this->bindingNavigatorPositionItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 9));
-            this->bindingNavigatorPositionItem->Name = L"bindingNavigatorPositionItem";
-            this->bindingNavigatorPositionItem->Size = System::Drawing::Size(50, 27);
-            this->bindingNavigatorPositionItem->Text = L"0";
-            this->bindingNavigatorPositionItem->ToolTipText = L"Current position";
-            this->bindingNavigatorCountItem->Name = L"bindingNavigatorCountItem";
-            this->bindingNavigatorCountItem->Size = System::Drawing::Size(45, 24);
-            this->bindingNavigatorCountItem->Text = L"of {0}";
-            this->bindingNavigatorCountItem->ToolTipText = L"Total number of items";
-            this->bindingNavigatorSeparator1->Name = L"bindingNavigatorSeparator";
-            this->bindingNavigatorSeparator1->Size = System::Drawing::Size(6, 27);
-            this->bindingNavigatorMoveNextItem->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-            this->bindingNavigatorMoveNextItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bindingNavigatorMoveNextItem.Image")));
-            this->bindingNavigatorMoveNextItem->Name = L"bindingNavigatorMoveNextItem";
-            this->bindingNavigatorMoveNextItem->RightToLeftAutoMirrorImage = true;
-            this->bindingNavigatorMoveNextItem->Size = System::Drawing::Size(29, 24);
-            this->bindingNavigatorMoveNextItem->Text = L"Move next";
-            this->bindingNavigatorMoveLastItem->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-            this->bindingNavigatorMoveLastItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bindingNavigatorMoveLastItem.Image")));
-            this->bindingNavigatorMoveLastItem->Name = L"bindingNavigatorMoveLastItem";
-            this->bindingNavigatorMoveLastItem->RightToLeftAutoMirrorImage = true;
-            this->bindingNavigatorMoveLastItem->Size = System::Drawing::Size(29, 24);
-            this->bindingNavigatorMoveLastItem->Text = L"Move last";
-            this->bindingNavigatorSeparator2->Name = L"bindingNavigatorSeparator";
-            this->bindingNavigatorSeparator2->Size = System::Drawing::Size(6, 27);
-            this->bindingNavigatorAddNewItem->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-            this->bindingNavigatorAddNewItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bindingNavigatorAddNewItem.Image")));
-            this->bindingNavigatorAddNewItem->Name = L"bindingNavigatorAddNewItem";
-            this->bindingNavigatorAddNewItem->RightToLeftAutoMirrorImage = true;
-            this->bindingNavigatorAddNewItem->Size = System::Drawing::Size(29, 24);
-            this->bindingNavigatorAddNewItem->Text = L"Add new";
-            this->bindingNavigatorDeleteItem->DisplayStyle = System::Windows::Forms::ToolStripItemDisplayStyle::Image;
-            this->bindingNavigatorDeleteItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"bindingNavigatorDeleteItem.Image")));
-            this->bindingNavigatorDeleteItem->Name = L"bindingNavigatorDeleteItem";
-            this->bindingNavigatorDeleteItem->RightToLeftAutoMirrorImage = true;
-            this->bindingNavigatorDeleteItem->Size = System::Drawing::Size(29, 24);
-            this->bindingNavigatorDeleteItem->Text = L"Delete";
+            // 
+            // carLogin
+            // 
             this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
             this->ClientSize = System::Drawing::Size(800, 800);
-            this->Controls->Add(this->bindingNavigator1);
             this->Controls->Add(this->signUpButton);
             this->Controls->Add(this->exitButton);
             this->Controls->Add(this->label2);
@@ -223,9 +157,6 @@ namespace CPECaroSell {
             this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
             this->Text = L"Login Form";
             this->Load += gcnew System::EventHandler(this, &carLogin::carLogin_Load);
-            (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->bindingNavigator1))->EndInit();
-            this->bindingNavigator1->ResumeLayout(false);
-            this->bindingNavigator1->PerformLayout();
             this->ResumeLayout(false);
             this->PerformLayout();
 
