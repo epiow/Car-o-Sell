@@ -143,7 +143,7 @@ namespace CPECaroSell {
 			this->cancelButton->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->cancelButton->FlatAppearance->BorderSize = 0;
 			this->cancelButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->cancelButton->Font = (gcnew System::Drawing::Font(L"Designer", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->cancelButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->cancelButton->Location = System::Drawing::Point(169, 636);
 			this->cancelButton->Name = L"cancelButton";
@@ -158,7 +158,7 @@ namespace CPECaroSell {
 			this->proceedButton->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->proceedButton->FlatAppearance->BorderSize = 0;
 			this->proceedButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->proceedButton->Font = (gcnew System::Drawing::Font(L"Designer", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->proceedButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->proceedButton->Location = System::Drawing::Point(421, 636);
 			this->proceedButton->Name = L"proceedButton";
@@ -166,13 +166,14 @@ namespace CPECaroSell {
 			this->proceedButton->TabIndex = 7;
 			this->proceedButton->Text = L"Proceed";
 			this->proceedButton->UseVisualStyleBackColor = false;
+			this->proceedButton->Click += gcnew System::EventHandler(this, &sellWindow::proceedButton_Click);
 			// 
 			// viewMyListButton
 			// 
 			this->viewMyListButton->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->viewMyListButton->FlatAppearance->BorderSize = 0;
 			this->viewMyListButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->viewMyListButton->Font = (gcnew System::Drawing::Font(L"Designer", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->viewMyListButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->viewMyListButton->Location = System::Drawing::Point(236, 688);
 			this->viewMyListButton->Name = L"viewMyListButton";
@@ -206,6 +207,27 @@ namespace CPECaroSell {
 
 		}
 #pragma endregion
+		int GenerateUniqueTransactionID() {
+			// Get the current timestamp
+			System::DateTime now = System::DateTime::Now;
+
+			// Format the timestamp as a unique ID (e.g., YYYYMMDDHHMMSS)
+			System::String^ uniqueID = String::Format("{0:D4}{1:D2}{2:D2}{3:D2}{4:D2}{5:D2}",
+				now.Year, now.Month, now.Day, now.Hour, now.Minute, now.Second);
+
+			// Parse the unique ID to an integer (assuming it's unique within a second)
+			int transactionID;
+			if (System::Int32::TryParse(uniqueID, transactionID)) {
+				return transactionID;
+			}
+
+			// If parsing fails (unlikely but possible if multiple transactions occur within a second),
+			// you can handle the error or implement a more sophisticated ID generation method.
+			// This is a simplified example.
+
+			// Handle the error or generate a different ID as needed
+			throw gcnew System::Exception("Unable to generate a unique transaction ID.");
+		}
 	private: System::Void sellWindow_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void brandTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -222,6 +244,33 @@ public: bool switchToSellList = false;
 private: System::Void viewMyListButton_Click(System::Object^ sender, System::EventArgs^ e) {
 	switchToSellList = true;
 	this->Close();
+}
+public: String^ ScurrentUser;
+private: System::Void proceedButton_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	System::String^ currentUser = ScurrentUser;
+
+	System::String^ brand = brandTextBox->Text;
+	System::String^ model = modelTextBox->Text;
+	System::String^ seats = numberOfSeatsTextBox->Text;
+	System::String^ plateNumber = plateNumberTextBox->Text;
+	System::String^ transmission = transmissionTextBox->Text;
+	System::String^ cost = costTextBox->Text;
+
+	System::String^ transactionData = String::Format("\n{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11}",
+		"", model, brand, transmission, cost, seats, plateNumber, " ", " ", " ", currentUser, "FALSE");
+
+	System::IO::File::AppendAllText("Transaction.csv", transactionData);
+
+	brandTextBox->Clear();
+	modelTextBox->Clear();
+	numberOfSeatsTextBox->Clear();
+	plateNumberTextBox->Clear();
+	transmissionTextBox->Clear();
+	costTextBox->Clear();
+
+
+	MessageBox::Show("Car is up for review.", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
 }
 };
 }

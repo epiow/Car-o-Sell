@@ -508,7 +508,7 @@ private: System::Void addBtn_Click(System::Object^ sender, System::EventArgs^ e)
 
 		MessageBox::Show(L"Car successfully added.");
 
-		dataGridView1->Dispose();
+		//dataGridView1->Dispose();
 
 		this->transactID->Text = "";
 		this->model->Text = "";
@@ -550,7 +550,7 @@ private: System::Void delBtn_Click(System::Object^ sender, System::EventArgs^ e)
 
 		MessageBox::Show(L"Car successfully deleted.");
 
-		dataGridView1->Dispose();
+		//dataGridView1->Dispose();
 
 		this->transactID->Text = "";
 		this->model->Text = "";

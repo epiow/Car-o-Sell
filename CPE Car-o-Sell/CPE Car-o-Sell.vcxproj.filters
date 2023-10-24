@@ -71,13 +71,16 @@
     <ClInclude Include="sellList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="UserData.csv">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="Transaction.csv">
       <Filter>Resource Files</Filter>
+    </None>
+    <None Include="UserData.csv">
+      <Filter>Header Files</Filter>
     </None>
   </ItemGroup>
 </Project>

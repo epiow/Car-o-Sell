@@ -820,7 +820,7 @@ private: System::Void exitButton_Click(System::Object^ sender, System::EventArgs
     if (MessageBox::Show(L"Do you want to exit the application?", L"Exit", MessageBoxButtons::YesNo, MessageBoxIcon::Question) == System::Windows::Forms::DialogResult::Yes)
     {
 		switchBackToUserMain = true;
-        this->Close();
+        this->Close();	
     }
 }
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {

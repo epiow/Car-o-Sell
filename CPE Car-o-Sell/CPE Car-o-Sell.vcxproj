@@ -144,6 +144,7 @@
     <ClInclude Include="carSignUp.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Header.h" />
     <ClInclude Include="rentWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
