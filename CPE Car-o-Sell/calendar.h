@@ -128,7 +128,6 @@ namespace CPECaroSell {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(366, 350);
 			this->panel1->TabIndex = 3;
-			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &calendar::panel1_Paint);
 			// 
 			// button2
 			// 
@@ -151,7 +150,6 @@ namespace CPECaroSell {
 			this->button1->TabIndex = 5;
 			this->button1->Text = L"Enter";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &calendar::button1_Click);
 			// 
 			// endDate
 			// 
@@ -209,7 +207,6 @@ private: System::Void exitButton_Click(System::Object^ sender, System::EventArgs
 	}
 }
 
-private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
+
 };
 }
