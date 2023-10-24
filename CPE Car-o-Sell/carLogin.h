@@ -48,19 +48,7 @@ namespace CPECaroSell {
 
     private: System::ComponentModel::IContainer^ components;
 
-
-
-
-
-
-
-
-
-
-
            bool loginSuccessful;
-
-
 
         void InitializeComponent(void)
         {
@@ -177,18 +165,8 @@ namespace CPECaroSell {
                 this->Close();
             }
         }
-
-        //FIXED!!
-        /*System::Void signUpButton_Click(System::Object^ sender, System::EventArgs^ e)
-        {
-            carSignUp^ signUpWin = gcnew carSignUp();
-            signUpWin->Show();
-        }*/
-
-
-
-
         //DATABASE HANDLING GAMIT CSV
+
         void LoadUserCredentials(const std::string& filename)
         {
             std::ifstream file(filename);
@@ -252,6 +230,7 @@ namespace CPECaroSell {
 
         public: bool SwitchToMain = false;
         public: bool SwitchToAdmin = false;
+        public: String^ currentUser;
         System::Void loginButton_Click(System::Object^ sender, System::EventArgs^ e)
         {
             String^ username = usernameTextBox->Text;
@@ -265,6 +244,7 @@ namespace CPECaroSell {
                 this->Close();
             }
             else if(authenticated){
+                currentUser = username;
                 SwitchToMain = true;
                 this->Close();
             }

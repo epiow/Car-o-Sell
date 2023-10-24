@@ -14,6 +14,8 @@ namespace CPECaroSell {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::IO;
+	using namespace System::Collections::Generic;
 
 	/// <summary>
 	/// Summary for adminWindow
@@ -66,26 +68,30 @@ namespace CPECaroSell {
 	private: System::Windows::Forms::TextBox^ rentDate;
 
 
-
+	
 
 
 	private: System::Windows::Forms::TextBox^ seats;
 
-	private: System::Windows::Forms::TextBox^ transmission;
+
 	private: System::Windows::Forms::TextBox^ cost;
+	private: System::Windows::Forms::Button^ addBtn;
+	private: System::Windows::Forms::Button^ delBtn;
+	private: System::Windows::Forms::Button^ editBtn;
 
 
 
 
 
-	private: System::Windows::Forms::Button^ add;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button1;
+
+
+
 	private: System::Windows::Forms::Button^ exitButton;
 
 
 	private: System::Windows::Forms::TextBox^ model;
 	private: System::Windows::Forms::ComboBox^ approval;
+	private: System::Windows::Forms::ComboBox^ transmission;
 
 	
 		   array<String^, 2>^ adminData;
@@ -192,20 +198,20 @@ namespace CPECaroSell {
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(adminWindow::typeid));
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->add = (gcnew System::Windows::Forms::Button());
+			this->delBtn = (gcnew System::Windows::Forms::Button());
+			this->editBtn = (gcnew System::Windows::Forms::Button());
+			this->addBtn = (gcnew System::Windows::Forms::Button());
 			this->returnDate = (gcnew System::Windows::Forms::TextBox());
 			this->platenum = (gcnew System::Windows::Forms::TextBox());
 			this->rentDate = (gcnew System::Windows::Forms::TextBox());
 			this->seats = (gcnew System::Windows::Forms::TextBox());
-			this->transmission = (gcnew System::Windows::Forms::TextBox());
 			this->cost = (gcnew System::Windows::Forms::TextBox());
 			this->brand = (gcnew System::Windows::Forms::TextBox());
 			this->transactID = (gcnew System::Windows::Forms::TextBox());
 			this->exitButton = (gcnew System::Windows::Forms::Button());
 			this->model = (gcnew System::Windows::Forms::TextBox());
 			this->approval = (gcnew System::Windows::Forms::ComboBox());
+			this->transmission = (gcnew System::Windows::Forms::ComboBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -232,8 +238,8 @@ namespace CPECaroSell {
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
 			dataGridViewCellStyle2->BackColor = System::Drawing::SystemColors::Window;
-			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Bebas Neue", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::ControlText;
 			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
 			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
@@ -253,12 +259,12 @@ namespace CPECaroSell {
 			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &adminWindow::dataGridView1_CellContentClick);
 			// 
-			// button2
+			// delBtn
 			// 
-			this->button2->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->button2->FlatAppearance->BorderSize = 0;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Designer", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->delBtn->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->delBtn->FlatAppearance->BorderSize = 0;
+			this->delBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->delBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->button2->Location = System::Drawing::Point(210, 553);
@@ -269,12 +275,12 @@ namespace CPECaroSell {
 			this->button2->Text = L"Delete";
 			this->button2->UseVisualStyleBackColor = false;
 			// 
-			// button1
+			// editBtn
 			// 
-			this->button1->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Designer", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->editBtn->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->editBtn->FlatAppearance->BorderSize = 0;
+			this->editBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->editBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->button1->Location = System::Drawing::Point(128, 598);
@@ -285,12 +291,12 @@ namespace CPECaroSell {
 			this->button1->Text = L"Edit";
 			this->button1->UseVisualStyleBackColor = false;
 			// 
-			// add
+			// addBtn
 			// 
-			this->add->BackColor = System::Drawing::SystemColors::ControlLightLight;
-			this->add->FlatAppearance->BorderSize = 0;
-			this->add->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->add->Font = (gcnew System::Drawing::Font(L"Designer", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->addBtn->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->addBtn->FlatAppearance->BorderSize = 0;
+			this->addBtn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->addBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->add->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->add->Location = System::Drawing::Point(31, 553);
@@ -426,6 +432,17 @@ namespace CPECaroSell {
 			this->approval->TabIndex = 41;
 			this->approval->SelectedIndexChanged += gcnew System::EventHandler(this, &adminWindow::approval_SelectedIndexChanged);
 			// 
+			// transmission
+			// 
+			this->transmission->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->transmission->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->transmission->FormattingEnabled = true;
+			this->transmission->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Auto", L"Manual" });
+			this->transmission->Location = System::Drawing::Point(189, 266);
+			this->transmission->Name = L"transmission";
+			this->transmission->Size = System::Drawing::Size(104, 21);
+			this->transmission->TabIndex = 42;
+			// 
 			// adminWindow
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -436,18 +453,17 @@ namespace CPECaroSell {
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(1000, 650);
 			this->Controls->Add(this->approval);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->button2);
+			this->Controls->Add(this->editBtn);
+			this->Controls->Add(this->delBtn);
 			this->Controls->Add(this->model);
 			this->Controls->Add(this->exitButton);
-			this->Controls->Add(this->add);
+			this->Controls->Add(this->addBtn);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->transactID);
 			this->Controls->Add(this->returnDate);
 			this->Controls->Add(this->brand);
 			this->Controls->Add(this->rentDate);
 			this->Controls->Add(this->platenum);
-			this->Controls->Add(this->transmission);
 			this->Controls->Add(this->cost);
 			this->Controls->Add(this->seats);
 			this->DoubleBuffered = true;
@@ -476,7 +492,7 @@ private: System::Void dataGridView1_CellContentClick(System::Object^ sender, Sys
 }
 
 private: System::Void adminWindow_Load(System::Object^ sender, System::EventArgs^ e) {
-}
+ }
 
 public: bool switchToLogin = false;
 private: System::Void exitButton_Click(System::Object^ sender, System::EventArgs^ e) {

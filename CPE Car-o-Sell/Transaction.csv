@@ -1,6 +1,6 @@
-Transaction ID,Model,Brand,Transmission,Cost,Seats,Plate #,Rental Date,Return Date,Renter, Seller, Approval
- ,Wigo,Toyota,Auto,1000,4,123x, , , , ,TRUE
- ,Innova,Toyota,Auto,2000,8,456x, , , , ,TRUE
- ,Hilux,Toyota,Auto,3000,5,759x, , , , ,TRUE
- ,Fortuner,Toyota,Auto,3000,7,759x, , , , ,FALSE
- ,Everest,Ford,Auto,3000,7,759x, , , , ,FALSE
+Transaction ID,Model,Brand,Transmission,Cost,Seats,Plate #,Rental Date,Return Date,Renter,Seller,Approval
+,Wigo,Toyota,Auto,1000,4,ABC1234, , , , ,TRUE
+,Innova,Toyota,Auto,2000,8,DEF9877, , , , ,TRUE
+,Hilux,Toyota,Auto,3000,5,ELY5678, , , , ,TRUE
+,Fortuner,Toyota,Auto,3000,7,EPI0000, , , , ,FALSE
+,Machhiato,Starbuck,Manual,150,0,SB123, , , ,user3,FALSE

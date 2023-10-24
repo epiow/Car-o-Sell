@@ -3,6 +3,8 @@
 #include "userMainWindow.h"
 #include "rentWindow.h"
 #include "adminWindow.h"
+#include "sellWindow.h"
+#include "sellList.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -17,10 +19,9 @@ User^ AuthenticateUser()
         CPECaroSell::adminWindow adminMainForm;
         loginForm.ShowDialog();
 
-
         if (loginForm.SwitchToMain)
         {
-            
+
             mainWinForm.ShowDialog();
 
             if (mainWinForm.switchToLogin)
@@ -28,17 +29,24 @@ User^ AuthenticateUser()
                 continue;
             }
             else if (mainWinForm.switchToRentForm)
+         
             {
-                CPECaroSell::rentWindow mainForm(user);
-                mainForm.ShowDialog();
+                CPECaroSell::rentWindow^ rentWin= gcnew CPECaroSell::rentWindow(user);
+                rentWin->ShowDialog();
 
-                if (mainForm.switchBackToUserMain)
+                if (rentWin->switchBackToUserMain)
                 {
                     continue;
                 }
-                else
+            }
+            else if (mainWinForm.switchToSellWindow) {           
+
+                CPECaroSell::sellWindow^ SellWindow = gcnew CPECaroSell::sellWindow(user);
+                SellWindow->ScurrentUser = loginForm.currentUser;
+                SellWindow->ShowDialog();
+                if (SellWindow->switchBackToUserMain)
                 {
-                    break; // Exiting the program
+                    continue;
                 }
             }
             else
@@ -59,7 +67,7 @@ User^ AuthenticateUser()
                 return adminMainForm.user;
             }
         }
-        
+
 
         else
         {
@@ -68,40 +76,10 @@ User^ AuthenticateUser()
     }
 }
 
-//void HandleUserSession()
-//{
-//    User^ user = nullptr;
-//    while (true)
-//    {
-//        user = AuthenticateUser();
-//
-//        if (user != nullptr)
-//        {
-//            CPECaroSell::rentWindow mainForm(user);
-//            mainForm.ShowDialog();
-//
-//            if (mainForm.switchBackToUserMain)
-//            {
-//                continue;
-//            }
-//            else
-//            {
-//                break; // Exiting the program
-//            }
-//        }
-//        else
-//        {
-//            break; // No user, exit program
-//        }
-//    }
-//}
-
 int main(array<String^>^ args)
 {
     Application::EnableVisualStyles();
     Application::SetCompatibleTextRenderingDefault(false);
-
-    //HandleUserSession();
 
     AuthenticateUser();
 

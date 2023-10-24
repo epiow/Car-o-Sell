@@ -126,6 +126,8 @@
     <ClCompile Include="carLogin.cpp" />
     <ClCompile Include="carSignUp.cpp" />
     <ClCompile Include="rentWindow.cpp" />
+    <ClCompile Include="sellList.cpp" />
+    <ClCompile Include="sellWindow.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="userMainWindow.cpp" />
   </ItemGroup>
@@ -142,7 +144,14 @@
     <ClInclude Include="carSignUp.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Header.h" />
     <ClInclude Include="rentWindow.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="sellList.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="sellWindow.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="user.h" />
@@ -166,6 +175,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rentWindow.resx">
       <DependentUpon>rentWindow.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sellList.resx">
+      <DependentUpon>sellList.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sellWindow.resx">
+      <DependentUpon>sellWindow.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userMainWindow.resx">
       <DependentUpon>userMainWindow.h</DependentUpon>
