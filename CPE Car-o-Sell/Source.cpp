@@ -32,7 +32,7 @@ User^ AuthenticateUser()
          
             {
                 CPECaroSell::rentWindow^ rentWin= gcnew CPECaroSell::rentWindow(user);
-                rentWin->ShowDialog()
+                rentWin->ShowDialog();
  
                 if (rentWin->switchBackToUserMain)
                 {
@@ -40,15 +40,15 @@ User^ AuthenticateUser()
                 }
             }
             else if (mainWinForm.switchToSellWindow) {           
-
                 CPECaroSell::sellWindow^ SellWindow = gcnew CPECaroSell::sellWindow(user);
                 SellWindow->ScurrentUser = loginForm.currentUser;
                 SellWindow->ShowDialog();
 
+                if (SellWindow->switchToSellList) {
 
-                if (SellWindow->switchBackToUserMain)
-                {
-                    continue;
+                    CPECaroSell::sellList^ SellList = gcnew CPECaroSell::sellList;
+                    SellList->SLcurrentUser = SellWindow->ScurrentUser;
+                    SellList->ShowDialog();
                 }
             }
             else
