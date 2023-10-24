@@ -79,9 +79,8 @@ private: System::Windows::Forms::Button^ exitButton;
 
 
 
-private: System::Windows::Forms::Button^ button1;
-private: System::Windows::Forms::DataGridView^ dataGridView1;
-
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
 
 
 
@@ -375,6 +374,8 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 
 private: System::Void platenum1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+
+
 private: System::Void rentWindow_Load(System::Object^ sender, System::EventArgs^ e) {
 	
 
@@ -418,7 +419,9 @@ private: System::Void textBox6_TextChanged(System::Object^ sender, System::Event
 public: String^ RcurrentUser;
 public: bool switchToCalendar;
 private: System::Void rentBtn_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	switchToCalendar = 1;
 	System::String^ currentUser = RcurrentUser;
+
 	// Check if a row is selected in the DataGridView
 	if (dataGridView1->SelectedRows->Count == 1) {
 		// Get the selected row

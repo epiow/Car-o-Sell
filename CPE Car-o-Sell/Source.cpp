@@ -32,7 +32,7 @@ User^ AuthenticateUser()
          
             {
                 CPECaroSell::rentWindow^ rentWin= gcnew CPECaroSell::rentWindow(user);
-                rentWin->ShowDialog()
+                rentWin->ShowDialog();
  
                 if (rentWin->switchBackToUserMain)
                 {
