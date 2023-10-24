@@ -28,6 +28,20 @@ namespace CPECaroSell {
 			InitializeComponent();
 			LoadData("Transaction.csv");
 			PopulateDataGridView(dataGridView1, dataApproval(rentData));
+
+			// Hide all columns
+			for (int i = 0; i < dataGridView1->ColumnCount; i++) {
+				dataGridView1->Columns[i]->Visible = false;
+			}
+
+			// Show the specific columns you want (indices 1, 2, 3, 4, 5, 6, and 10)
+			dataGridView1->Columns[1]->Visible = true; // Brand
+			dataGridView1->Columns[2]->Visible = true; // Transmission
+			dataGridView1->Columns[3]->Visible = true; // Cost
+			dataGridView1->Columns[4]->Visible = true; // Seats
+			dataGridView1->Columns[5]->Visible = true; // Plate #
+			// You can add other columns as needed
+			dataGridView1->Columns[10]->Visible = true; // Approval
 		}
 
 	protected:
@@ -90,13 +104,26 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 	
 		void LoadSelectedCell()
 		{
-			model->Text = dataGridView1->Rows[dataGridView1->CurrentCell->RowIndex]->Cells[0]->Value->ToString();
-			brand->Text = dataGridView1->Rows[dataGridView1->CurrentCell->RowIndex]->Cells[1]->Value->ToString();
-			transmission->Text = dataGridView1->Rows[dataGridView1->CurrentCell->RowIndex]->Cells[2]->Value->ToString();
-			cost->Text = dataGridView1->Rows[dataGridView1->CurrentCell->RowIndex]->Cells[3]->Value->ToString();
-			seats->Text = dataGridView1->Rows[dataGridView1->CurrentCell->RowIndex]->Cells[4]->Value->ToString();
-			platenum->Text = dataGridView1->Rows[dataGridView1->CurrentCell->RowIndex]->Cells[5]->Value->ToString();
+			// Assuming 'dataGridView1' is your DataGridView control
+
+			// Get the selected row
+			DataGridViewRow^ selectedRow = dataGridView1->Rows[dataGridView1->CurrentCell->RowIndex];
+
+			// Check the 'Approval' column value (assuming it's at index 10)
+			System::String^ approvalValue = selectedRow->Cells[10]->Value->ToString();
+
+			// Only load the selected cell if 'Approval' is "TRUE"
+			if (approvalValue->Trim()->Equals("TRUE", System::StringComparison::InvariantCultureIgnoreCase))
+			{
+				model->Text = selectedRow->Cells[0]->Value->ToString();
+				brand->Text = selectedRow->Cells[1]->Value->ToString();
+				transmission->Text = selectedRow->Cells[2]->Value->ToString();
+				cost->Text = selectedRow->Cells[3]->Value->ToString();
+				seats->Text = selectedRow->Cells[4]->Value->ToString();
+				platenum->Text = selectedRow->Cells[5]->Value->ToString();
+			}
 		}
+
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(rentWindow::typeid));
@@ -178,7 +205,7 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 			resources->ApplyResources(this->button1, L"button1");
 			this->button1->Name = L"button1";
 			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &rentWindow::button1_Click_1);
+			this->button1->Click += gcnew System::EventHandler(this, &rentWindow::rentBtn_Click_1);
 			// 
 			// dataGridView1
 			// 
@@ -387,7 +414,56 @@ private: System::Void dataGridView1_CellContentClick(System::Object^ sender, Sys
 }
 private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+
+public: String^ RcurrentUser;
+public: bool switchToCalendar;
+private: System::Void rentBtn_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	System::String^ currentUser = RcurrentUser;
+	// Check if a row is selected in the DataGridView
+	if (dataGridView1->SelectedRows->Count == 1) {
+		// Get the selected row
+		DataGridViewRow^ selectedRow = dataGridView1->SelectedRows[0];
+
+		// Retrieve relevant data from the selected row
+		System::String^ model = selectedRow->Cells[0]->Value->ToString();
+		System::String^ brand = selectedRow->Cells[1]->Value->ToString();
+
+		// Create an instance of the calendar form
+		CPECaroSell::calendar^ calendarView = gcnew CPECaroSell::calendar;
+		calendarView->ShowDialog();
+		
+	}
+	else {
+		// Inform the user that they need to select a row from the DataGridView.
+		MessageBox::Show("Please select a car from the list to rent.", "Information", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
 }
 };
 }
+//public: String^ ScurrentUser;
+//private: System::Void proceedButton_Click(System::Object^ sender, System::EventArgs^ e) {
+//
+//	System::String^ currentUser = ScurrentUser;
+//
+//	System::String^ brand = brandTextBox->Text;
+//	System::String^ model = modelTextBox->Text;
+//	System::String^ seats = numberOfSeatsTextBox->Text;
+//	System::String^ plateNumber = plateNumberTextBox->Text;
+//	System::String^ transmission = transmissionTextBox->Text;
+//	System::String^ cost = costTextBox->Text;
+//
+//	System::String^ transactionData = String::Format("\n{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11}",
+//		"", model, brand, transmission, cost, seats, plateNumber, " ", " ", " ", currentUser, "FALSE");
+//
+//	System::IO::File::AppendAllText("Transaction.csv", transactionData);
+//
+//	brandTextBox->Clear();
+//	modelTextBox->Clear();
+//	numberOfSeatsTextBox->Clear();
+//	plateNumberTextBox->Clear();
+//	transmissionTextBox->Clear();
+//	costTextBox->Clear();
+//
+//
+//	MessageBox::Show("Car is up for review.", "Success", MessageBoxButtons::OK, MessageBoxIcon::Information);
+//}
