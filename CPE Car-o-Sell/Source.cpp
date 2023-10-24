@@ -17,6 +17,7 @@ User^ AuthenticateUser()
         User^ user = nullptr;
         CPECaroSell::userMainwindow mainWinForm;
         CPECaroSell::carLogin loginForm;
+
         CPECaroSell::adminWindow adminMainForm;
 
         loginForm.ShowDialog();
