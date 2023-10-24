@@ -17,6 +17,7 @@ User^ AuthenticateUser()
         CPECaroSell::userMainwindow mainWinForm;
         CPECaroSell::carLogin loginForm;
         CPECaroSell::adminWindow adminMainForm;
+        CPECaroSell::calendar calendarWin;
         loginForm.ShowDialog();
 
         if (loginForm.SwitchToMain)
@@ -32,6 +33,7 @@ User^ AuthenticateUser()
          
             {
                 CPECaroSell::rentWindow^ rentWin= gcnew CPECaroSell::rentWindow(user);
+                calendarWin.CcurrentUser = loginForm.currentUser;
                 rentWin->ShowDialog();
  
                 if (rentWin->switchBackToUserMain)

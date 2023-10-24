@@ -419,9 +419,8 @@ private: System::Void textBox6_TextChanged(System::Object^ sender, System::Event
 public: String^ RcurrentUser;
 public: bool switchToCalendar;
 private: System::Void rentBtn_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	switchToCalendar = 1;
 	System::String^ currentUser = RcurrentUser;
-
+	
 	// Check if a row is selected in the DataGridView
 	if (dataGridView1->SelectedRows->Count == 1) {
 		// Get the selected row
@@ -432,8 +431,9 @@ private: System::Void rentBtn_Click_1(System::Object^ sender, System::EventArgs^
 		System::String^ brand = selectedRow->Cells[1]->Value->ToString();
 
 		// Create an instance of the calendar form
-		//CPECaroSell::calendar^ calendarView = gcnew CPECaroSell::calendar;
-		//calendarView->ShowDialog();
+		CPECaroSell::calendar^ calendarView = gcnew CPECaroSell::calendar;
+		calendarView->CcurrentUser = RcurrentUser;
+		calendarView->ShowDialog();
 		
 	}
 	else {

@@ -1,5 +1,5 @@
 Transaction ID,Model,Brand,Transmission,Cost,Seats,Plate #,Rental Date,Return Date,Renter,Seller,Approval
-1,Wigo,Toyota,Auto,1000,4,ABC1234, , , , ,TRUE
+4,Fortuner,Toyota,Auto,3000,7,EPI0000,03/10/2023,16/10/2023,,user1,FALSE
 2,Innova,Toyota,Auto,2000,8,DEF9877, , , , ,FALSE
 3,Hilux,Toyota,Auto,3000,5,ELY5678, , , ,user1,TRUE
 4,Fortuner,Toyota,Auto,3000,7,EPI0000, , , ,user1,FALSE
