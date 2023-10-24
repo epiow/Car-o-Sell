@@ -18,6 +18,7 @@ User^ AuthenticateUser()
         CPECaroSell::userMainwindow mainWinForm;
         CPECaroSell::carLogin loginForm;
         CPECaroSell::adminWindow adminMainForm;
+        CPECaroSell::calendar calendarWin;
         CPECaroSell::carSignUp signUpForm;
         loginForm.ShowDialog();
 
@@ -34,6 +35,7 @@ User^ AuthenticateUser()
          
             {
                 CPECaroSell::rentWindow^ rentWin= gcnew CPECaroSell::rentWindow(user);
+                calendarWin.CcurrentUser = loginForm.currentUser;
                 rentWin->ShowDialog();
  
                 if (rentWin->switchBackToUserMain)
@@ -42,15 +44,15 @@ User^ AuthenticateUser()
                 }
             }
             else if (mainWinForm.switchToSellWindow) {           
-
                 CPECaroSell::sellWindow^ SellWindow = gcnew CPECaroSell::sellWindow(user);
                 SellWindow->ScurrentUser = loginForm.currentUser;
                 SellWindow->ShowDialog();
 
+                if (SellWindow->switchToSellList) {
 
-                if (SellWindow->switchBackToUserMain)
-                {
-                    continue;
+                    CPECaroSell::sellList^ SellList = gcnew CPECaroSell::sellList;
+                    SellList->SLcurrentUser = SellWindow->ScurrentUser;
+                    SellList->ShowDialog();
                 }
             }
             else

@@ -22,10 +22,11 @@ namespace CPECaroSell {
 	public ref class sellList : public System::Windows::Forms::Form
 	{
 	public:
+		String^ SLcurrentUser;
 		sellList(void)
 		{
 			InitializeComponent();
-			PopulateDataGridView("Transaction.csv");
+			PopulateDataGridView(SLcurrentUser);
 
 		}
 
@@ -70,15 +71,14 @@ namespace CPECaroSell {
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
-		void sellList::PopulateDataGridView(const std::string& filename)
+		void sellList::PopulateDataGridView(String^ currentUser)
 		{
-			std::ifstream file(filename);
+			std::ifstream file("Transaction.csv");
 			std::vector<std::vector<std::string>> data;
 			if (!file.is_open()) {
-				MessageBox::Show(L"Error. Unable to open user credentials file.");
+				MessageBox::Show(L"Error. Unable to open Transaction.csv file.");
 				return;
 			}
-
 
 			std::string line;
 			if (std::getline(file, line)) {
@@ -90,7 +90,7 @@ namespace CPECaroSell {
 				}
 			}
 
-			// Read the remaining data
+			// Read the remaining data and filter rows by 'Seller'
 			while (std::getline(file, line)) {
 				std::vector<std::string> row;
 				std::stringstream ss(line);
@@ -100,23 +100,33 @@ namespace CPECaroSell {
 					row.push_back(cell);
 				}
 
-				data.push_back(row);
+				// Assuming 'Seller' column is at index 10 (0-based index)
+				if (row.size() > 10 && gcnew String(row[10].c_str()) == currentUser) {
+					data.push_back(row);
+				}
 			}
 
 			file.close();
-			int rowCount = data.size();
-			int columnCount = (rowCount > 0) ? data[1].size() : 0;
 
-			dataGridView1->RowCount = rowCount;
+			int rowCount = data.size();
+			int columnCount = (rowCount > 0) ? data[0].size() : 0;
+
+			// Ensure that the DataGridView has at least one row
+			dataGridView1->RowCount = (rowCount > 0) ? rowCount : 1;
 			dataGridView1->ColumnCount = columnCount;
 
-			for (int i = 0; i < rowCount; i++) {
-				for (int j = 0; j < columnCount; j++) {
-					dataGridView1->Rows[i]->Cells[j]->Value = gcnew String(data[i][j].c_str());
-
+			if (rowCount > 0) {
+				for (int i = 0; i < rowCount; i++) {
+					for (int j = 0; j < columnCount; j++) {
+						dataGridView1->Rows[i]->Cells[j]->Value = gcnew String(data[i][j].c_str());
+					}
 				}
 			}
+			else {
+				// Handle the case where there are no matching rows, e.g., display a message.
+			}
 		}
+
 		void InitializeComponent(void)
 		{
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(sellList::typeid));
@@ -140,7 +150,7 @@ namespace CPECaroSell {
 			this->removeButton->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->removeButton->FlatAppearance->BorderSize = 0;
 			this->removeButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->removeButton->Font = (gcnew System::Drawing::Font(L"Designer", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->removeButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->removeButton->Location = System::Drawing::Point(33, 689);
 			this->removeButton->Name = L"removeButton";
@@ -148,13 +158,14 @@ namespace CPECaroSell {
 			this->removeButton->TabIndex = 0;
 			this->removeButton->Text = L"Remove";
 			this->removeButton->UseVisualStyleBackColor = false;
+			this->removeButton->Click += gcnew System::EventHandler(this, &sellList::removeButton_Click);
 			// 
 			// backButton
 			// 
 			this->backButton->BackColor = System::Drawing::SystemColors::ControlLightLight;
 			this->backButton->FlatAppearance->BorderSize = 0;
 			this->backButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->backButton->Font = (gcnew System::Drawing::Font(L"Designer", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->backButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->backButton->Location = System::Drawing::Point(565, 689);
 			this->backButton->Name = L"backButton";
@@ -176,7 +187,6 @@ namespace CPECaroSell {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->Size = System::Drawing::Size(718, 217);
 			this->dataGridView1->TabIndex = 2;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &sellList::dataGridView1_CellContentClick);
 			// 
 			// TransmissionIDColumn
 			// 
@@ -241,14 +251,32 @@ namespace CPECaroSell {
 
 		}
 #pragma endregion
-	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	}
+
 private: System::Void sellList_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 public: bool switchBackTosellWindow = false;
+
 private: System::Void backButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
+	String^ currentUser = SLcurrentUser;
 	switchBackTosellWindow = true;
+
 	this->Close();
 }
+private: System::Void removeButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ output = ""; // Initialize a string to store the column values
+
+	for (int i = 0; i < dataGridView1->RowCount; i++) {
+		DataGridViewRow^ row = dataGridView1->Rows[i];
+		DataGridViewCell^ cell = row->Cells[2]; // Replace 'columnIndex' with the index of the column you want to retrieve
+
+		if (cell != nullptr && cell->Value != nullptr) {
+			output += cell->Value->ToString() + "\n"; // Append the cell value to the output string
+		}
+	}
+
+	//// Display the output in a MessageBox or another control
+	//MessageBox::Show(output);
+
+	}
 };
 }

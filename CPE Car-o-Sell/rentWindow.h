@@ -79,9 +79,8 @@ private: System::Windows::Forms::Button^ exitButton;
 
 
 
-private: System::Windows::Forms::Button^ button1;
-private: System::Windows::Forms::DataGridView^ dataGridView1;
-
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
 
 
 
@@ -375,6 +374,8 @@ private: System::Windows::Forms::DataGridView^ dataGridView1;
 
 private: System::Void platenum1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+
+
 private: System::Void rentWindow_Load(System::Object^ sender, System::EventArgs^ e) {
 	
 
@@ -419,6 +420,7 @@ public: String^ RcurrentUser;
 public: bool switchToCalendar;
 private: System::Void rentBtn_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	System::String^ currentUser = RcurrentUser;
+	
 	// Check if a row is selected in the DataGridView
 	if (dataGridView1->SelectedRows->Count == 1) {
 		// Get the selected row
@@ -429,8 +431,9 @@ private: System::Void rentBtn_Click_1(System::Object^ sender, System::EventArgs^
 		System::String^ brand = selectedRow->Cells[1]->Value->ToString();
 
 		// Create an instance of the calendar form
-		//CPECaroSell::calendar^ calendarView = gcnew CPECaroSell::calendar;
-		//calendarView->ShowDialog();
+		CPECaroSell::calendar^ calendarView = gcnew CPECaroSell::calendar;
+		calendarView->CcurrentUser = RcurrentUser;
+		calendarView->ShowDialog();
 		
 	}
 	else {
