@@ -5,6 +5,7 @@
 #include "adminWindow.h"
 #include "sellWindow.h"
 #include "sellList.h"
+#include "carSignUp.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -17,6 +18,7 @@ User^ AuthenticateUser()
         CPECaroSell::userMainwindow mainWinForm;
         CPECaroSell::carLogin loginForm;
         CPECaroSell::adminWindow adminMainForm;
+        CPECaroSell::carSignUp signUpForm;
         loginForm.ShowDialog();
 
         if (loginForm.SwitchToMain)
@@ -55,6 +57,9 @@ User^ AuthenticateUser()
             {
                 return mainWinForm.user;
             }
+        }
+        else if (loginForm.switchToSignUp) {
+            signUpForm.ShowDialog();
         }
         else if (loginForm.SwitchToAdmin)
         {

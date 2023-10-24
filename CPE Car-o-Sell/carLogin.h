@@ -130,6 +130,7 @@ namespace CPECaroSell {
             this->signUpButton->TabIndex = 6;
             this->signUpButton->Text = L"Sign Up";
             this->signUpButton->UseVisualStyleBackColor = false;
+            this->signUpButton->Click += gcnew System::EventHandler(this, &carLogin::signUpButton_Click);
             // 
             // carLogin
             // 
@@ -276,5 +277,10 @@ namespace CPECaroSell {
     }
     private: System::Void bindingNavigator1_RefreshItems(System::Object^ sender, System::EventArgs^ e) {
     }
+public: bool switchToSignUp = false;
+private: System::Void signUpButton_Click(System::Object^ sender, System::EventArgs^ e) {
+    switchToSignUp = true;
+    this->Close();
+}
 };
 }
