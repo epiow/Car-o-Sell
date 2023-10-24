@@ -429,8 +429,8 @@ private: System::Void rentBtn_Click_1(System::Object^ sender, System::EventArgs^
 		System::String^ brand = selectedRow->Cells[1]->Value->ToString();
 
 		// Create an instance of the calendar form
-		CPECaroSell::calendar^ calendarView = gcnew CPECaroSell::calendar;
-		calendarView->ShowDialog();
+		//CPECaroSell::calendar^ calendarView = gcnew CPECaroSell::calendar;
+		//calendarView->ShowDialog();
 		
 	}
 	else {
