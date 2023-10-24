@@ -5,6 +5,7 @@
 #include "adminWindow.h"
 #include "sellWindow.h"
 #include "sellList.h"
+#include "carSignUp.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -17,6 +18,8 @@ User^ AuthenticateUser()
         CPECaroSell::userMainwindow mainWinForm;
         CPECaroSell::carLogin loginForm;
         CPECaroSell::adminWindow adminMainForm;
+        CPECaroSell::calendar calendarWin;
+        CPECaroSell::carSignUp signUpForm;
         loginForm.ShowDialog();
 
         if (loginForm.SwitchToMain)
@@ -32,27 +35,33 @@ User^ AuthenticateUser()
          
             {
                 CPECaroSell::rentWindow^ rentWin= gcnew CPECaroSell::rentWindow(user);
+                calendarWin.CcurrentUser = loginForm.currentUser;
                 rentWin->ShowDialog();
-
+ 
                 if (rentWin->switchBackToUserMain)
                 {
                     continue;
                 }
             }
             else if (mainWinForm.switchToSellWindow) {           
-
                 CPECaroSell::sellWindow^ SellWindow = gcnew CPECaroSell::sellWindow(user);
                 SellWindow->ScurrentUser = loginForm.currentUser;
                 SellWindow->ShowDialog();
-                if (SellWindow->switchBackToUserMain)
-                {
-                    continue;
+
+                if (SellWindow->switchToSellList) {
+
+                    CPECaroSell::sellList^ SellList = gcnew CPECaroSell::sellList;
+                    SellList->SLcurrentUser = SellWindow->ScurrentUser;
+                    SellList->ShowDialog();
                 }
             }
             else
             {
                 return mainWinForm.user;
             }
+        }
+        else if (loginForm.switchToSignUp) {
+            signUpForm.ShowDialog();
         }
         else if (loginForm.SwitchToAdmin)
         {

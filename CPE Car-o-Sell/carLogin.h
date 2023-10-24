@@ -34,8 +34,8 @@ namespace CPECaroSell {
         System::Windows::Forms::TextBox^ usernameTextBox;
         System::Windows::Forms::TextBox^ passwordTextBox;
 
-        System::Windows::Forms::Label^ label1;
-        System::Windows::Forms::Label^ label2;
+
+
         System::Windows::Forms::Button^ exitButton;
         System::Windows::Forms::Button^ loginButton;
         System::Windows::Forms::Button^ signUpButton;
@@ -56,8 +56,6 @@ namespace CPECaroSell {
             this->usernameTextBox = (gcnew System::Windows::Forms::TextBox());
             this->passwordTextBox = (gcnew System::Windows::Forms::TextBox());
             this->loginButton = (gcnew System::Windows::Forms::Button());
-            this->label1 = (gcnew System::Windows::Forms::Label());
-            this->label2 = (gcnew System::Windows::Forms::Label());
             this->exitButton = (gcnew System::Windows::Forms::Button());
             this->signUpButton = (gcnew System::Windows::Forms::Button());
             this->SuspendLayout();
@@ -65,87 +63,88 @@ namespace CPECaroSell {
             // usernameTextBox
             // 
             this->usernameTextBox->Anchor = System::Windows::Forms::AnchorStyles::None;
-            this->usernameTextBox->Location = System::Drawing::Point(29, 298);
+            this->usernameTextBox->BackColor = System::Drawing::SystemColors::Window;
+            this->usernameTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->usernameTextBox->Cursor = System::Windows::Forms::Cursors::IBeam;
+            this->usernameTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 27.75F, System::Drawing::FontStyle::Regular,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->usernameTextBox->Location = System::Drawing::Point(171, 355);
+            this->usernameTextBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
             this->usernameTextBox->Name = L"usernameTextBox";
-            this->usernameTextBox->Size = System::Drawing::Size(212, 22);
+            this->usernameTextBox->Size = System::Drawing::Size(407, 42);
             this->usernameTextBox->TabIndex = 0;
             this->usernameTextBox->TextChanged += gcnew System::EventHandler(this, &carLogin::usernameTextBox_TextChanged);
             // 
             // passwordTextBox
             // 
             this->passwordTextBox->Anchor = System::Windows::Forms::AnchorStyles::None;
-            this->passwordTextBox->Location = System::Drawing::Point(29, 393);
+            this->passwordTextBox->BorderStyle = System::Windows::Forms::BorderStyle::None;
+            this->passwordTextBox->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 27.75F, System::Drawing::FontStyle::Regular,
+                System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+            this->passwordTextBox->Location = System::Drawing::Point(171, 463);
+            this->passwordTextBox->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
             this->passwordTextBox->Name = L"passwordTextBox";
             this->passwordTextBox->PasswordChar = '*';
-            this->passwordTextBox->Size = System::Drawing::Size(212, 22);
+            this->passwordTextBox->Size = System::Drawing::Size(407, 42);
             this->passwordTextBox->TabIndex = 1;
             this->passwordTextBox->TextChanged += gcnew System::EventHandler(this, &carLogin::passwordTextBox_TextChanged);
             // 
             // loginButton
             // 
-            this->loginButton->Location = System::Drawing::Point(29, 621);
+            this->loginButton->BackColor = System::Drawing::SystemColors::ControlLightLight;
+            this->loginButton->FlatAppearance->BorderSize = 0;
+            this->loginButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->loginButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->loginButton->Location = System::Drawing::Point(171, 549);
+            this->loginButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
             this->loginButton->Name = L"loginButton";
-            this->loginButton->Size = System::Drawing::Size(115, 36);
+            this->loginButton->Size = System::Drawing::Size(407, 75);
             this->loginButton->TabIndex = 2;
             this->loginButton->Text = L"Login";
+            this->loginButton->UseVisualStyleBackColor = false;
             this->loginButton->Click += gcnew System::EventHandler(this, &carLogin::loginButton_Click);
-            // 
-            // label1
-            // 
-            this->label1->AutoSize = true;
-            this->label1->Font = (gcnew System::Drawing::Font(L"Rockwell Condensed", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->label1->Location = System::Drawing::Point(20, 260);
-            this->label1->Name = L"label1";
-            this->label1->Size = System::Drawing::Size(124, 35);
-            this->label1->TabIndex = 4;
-            this->label1->Text = L"USERNAME";
-            this->label1->Click += gcnew System::EventHandler(this, &carLogin::label1_Click);
-            // 
-            // label2
-            // 
-            this->label2->AutoSize = true;
-            this->label2->Font = (gcnew System::Drawing::Font(L"Rockwell Condensed", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->label2->Location = System::Drawing::Point(23, 355);
-            this->label2->Name = L"label2";
-            this->label2->Size = System::Drawing::Size(124, 35);
-            this->label2->TabIndex = 5;
-            this->label2->Text = L"PASSWORD";
-            this->label2->Click += gcnew System::EventHandler(this, &carLogin::label2_Click);
             // 
             // exitButton
             // 
-            this->exitButton->Location = System::Drawing::Point(750, 10);
+            this->exitButton->Location = System::Drawing::Point(688, 3);
+            this->exitButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
             this->exitButton->Name = L"exitButton";
-            this->exitButton->Size = System::Drawing::Size(40, 40);
+            this->exitButton->Size = System::Drawing::Size(51, 54);
             this->exitButton->TabIndex = 4;
             this->exitButton->Text = L"X";
             this->exitButton->Click += gcnew System::EventHandler(this, &carLogin::exitButton_Click);
             // 
             // signUpButton
             // 
-            this->signUpButton->Location = System::Drawing::Point(165, 621);
+            this->signUpButton->BackColor = System::Drawing::SystemColors::ControlLightLight;
+            this->signUpButton->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+            this->signUpButton->FlatAppearance->BorderSize = 0;
+            this->signUpButton->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->signUpButton->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 27.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+                static_cast<System::Byte>(0)));
+            this->signUpButton->Location = System::Drawing::Point(171, 639);
+            this->signUpButton->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
             this->signUpButton->Name = L"signUpButton";
-            this->signUpButton->Size = System::Drawing::Size(107, 35);
+            this->signUpButton->Size = System::Drawing::Size(407, 73);
             this->signUpButton->TabIndex = 6;
             this->signUpButton->Text = L"Sign Up";
-            this->signUpButton->UseVisualStyleBackColor = true;
+            this->signUpButton->UseVisualStyleBackColor = false;
+            this->signUpButton->Click += gcnew System::EventHandler(this, &carLogin::signUpButton_Click);
             // 
             // carLogin
             // 
-            this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+            this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
             this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
             this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
-            this->ClientSize = System::Drawing::Size(800, 800);
+            this->ClientSize = System::Drawing::Size(750, 750);
             this->Controls->Add(this->signUpButton);
             this->Controls->Add(this->exitButton);
-            this->Controls->Add(this->label2);
-            this->Controls->Add(this->label1);
             this->Controls->Add(this->usernameTextBox);
             this->Controls->Add(this->passwordTextBox);
             this->Controls->Add(this->loginButton);
             this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+            this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
             this->Name = L"carLogin";
             this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
             this->Text = L"Login Form";
@@ -278,5 +277,10 @@ namespace CPECaroSell {
     }
     private: System::Void bindingNavigator1_RefreshItems(System::Object^ sender, System::EventArgs^ e) {
     }
+public: bool switchToSignUp = false;
+private: System::Void signUpButton_Click(System::Object^ sender, System::EventArgs^ e) {
+    switchToSignUp = true;
+    this->Close();
+}
 };
 }
