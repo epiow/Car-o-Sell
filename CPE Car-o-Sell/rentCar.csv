@@ -1,0 +1,6 @@
+Model,Brand,Transmission,Cost,Seats,Plate #,Approval
+Wigo,Toyota,Auto,1000,4,123x,TRUE
+Innova,Toyota,Auto,2000,8,456x,TRUE
+Hilux,Toyota,Auto,3000,5,759x,TRUE
+Fortuner,Toyota,Auto,3000,7,759x,FALSE
+Everest,Ford,Auto,3000,7,759x,FALSE

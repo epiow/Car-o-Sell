@@ -5,6 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include "rentWindow.h"
 
 
 namespace CPECaroSell {
@@ -149,6 +150,7 @@ namespace CPECaroSell {
 			this->button1->TabIndex = 5;
 			this->button1->Text = L"Enter";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &calendar::button1_Click);
 			// 
 			// endDate
 			// 
@@ -206,5 +208,8 @@ private: System::Void exitButton_Click(System::Object^ sender, System::EventArgs
 	}
 }
 
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+}
 };
 }

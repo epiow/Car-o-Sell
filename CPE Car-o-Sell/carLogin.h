@@ -12,6 +12,7 @@ namespace CPECaroSell {
     using namespace System;
     using namespace System::Windows::Forms;
 
+
     public ref class carLogin : public System::Windows::Forms::Form
 
     {
@@ -40,6 +41,10 @@ namespace CPECaroSell {
         System::Windows::Forms::Button^ signUpButton;
 
         array<String^, 2>^ userCredentials;
+
+       
+
+
 
     private: System::ComponentModel::IContainer^ components;
 
@@ -179,6 +184,8 @@ namespace CPECaroSell {
             carSignUp^ signUpWin = gcnew carSignUp();
             signUpWin->Show();
         }*/
+
+
 
 
         //DATABASE HANDLING GAMIT CSV
