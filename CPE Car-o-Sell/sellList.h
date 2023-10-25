@@ -6,6 +6,7 @@
 #include <fstream>
 #include <sstream>
 #include "user.h"
+#include "sellWindow.h"
 
 namespace CPECaroSell {
 
@@ -23,13 +24,12 @@ namespace CPECaroSell {
 	{
 	public:
 		String^ SLcurrentUser;
-		sellList(void)
-		{
+		sellList(User^ User) {
 			InitializeComponent();
-			PopulateDataGridView(SLcurrentUser);
-
+			LoadData("Transaction.csv");
+			PopulateDataGridView(dataGridView1, dataApproval(sellListData));
 		}
-
+	
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -54,7 +54,7 @@ namespace CPECaroSell {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PlateNoColumn;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ RentalDateColumn;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ RentalReturnColumn;
-
+	array<String^, 2>^ sellListData;
 
 
 
@@ -71,61 +71,8 @@ namespace CPECaroSell {
 		System::ComponentModel::Container ^components;
 
 #pragma region Windows Form Designer generated code
-		void sellList::PopulateDataGridView(String^ currentUser)
-		{
-			std::ifstream file("Transaction.csv");
-			std::vector<std::vector<std::string>> data;
-			if (!file.is_open()) {
-				MessageBox::Show(L"Error. Unable to open Transaction.csv file.");
-				return;
-			}
 
-			std::string line;
-			if (std::getline(file, line)) {
-				std::stringstream ss(line);
-				std::string columnName;
-
-				while (std::getline(ss, columnName, ',')) {
-					dataGridView1->Columns->Add(gcnew String(columnName.c_str()), gcnew String(columnName.c_str()));
-				}
-			}
-
-			// Read the remaining data and filter rows by 'Seller'
-			while (std::getline(file, line)) {
-				std::vector<std::string> row;
-				std::stringstream ss(line);
-				std::string cell;
-
-				while (std::getline(ss, cell, ',')) {
-					row.push_back(cell);
-				}
-
-				// Assuming 'Seller' column is at index 10 (0-based index)
-				if (row.size() > 10 && gcnew String(row[10].c_str()) == currentUser) {
-					data.push_back(row);
-				}
-			}
-
-			file.close();
-
-			int rowCount = data.size();
-			int columnCount = (rowCount > 0) ? data[0].size() : 0;
-
-			// Ensure that the DataGridView has at least one row
-			dataGridView1->RowCount = (rowCount > 0) ? rowCount : 1;
-			dataGridView1->ColumnCount = columnCount;
-
-			if (rowCount > 0) {
-				for (int i = 0; i < rowCount; i++) {
-					for (int j = 0; j < columnCount; j++) {
-						dataGridView1->Rows[i]->Cells[j]->Value = gcnew String(data[i][j].c_str());
-					}
-				}
-			}
-			else {
-				// Handle the case where there are no matching rows, e.g., display a message.
-			}
-		}
+		
 
 		void InitializeComponent(void)
 		{
@@ -248,9 +195,113 @@ namespace CPECaroSell {
 			this->Load += gcnew System::EventHandler(this, &sellList::sellList_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
-
+			
 		}
 #pragma endregion
+
+
+
+		void sellList::LoadData(const std::string& filename)
+		{
+			std::ifstream file(filename);
+
+			if (!file.is_open()) {
+				MessageBox::Show(L"Error. Unable to open user credentials file.");
+				return;
+			}
+
+			std::vector<std::vector<std::string>> data;
+			std::string line;
+			while (std::getline(file, line)) {
+				std::vector<std::string> row;
+				std::istringstream iss(line);
+				std::string cell;
+				while (std::getline(iss, cell, ',')) {
+					row.push_back(cell);
+				}
+				data.push_back(row);
+			}
+
+			file.close();
+			int numColumns = data.empty() ? 0 : data[0].size();
+			for (const auto& row : data) {
+				if (row.size() != numColumns) {
+					MessageBox::Show(L"Error. Inconsistent number of columns in user credentials file.");
+					return;
+				}
+			}
+
+			sellListData = gcnew array<String^, 2>(data.size(), numColumns);
+			for (int i = 0; i < data.size(); i++) {
+				for (int j = 0; j < numColumns; j++) {
+					sellListData[i, j] = gcnew String(data[i][j].c_str());
+				}
+			}
+
+		}
+		array<String^, 2>^ dataApproval(array<String^, 2>^ data) {
+			if (data->Length == 0 || data->GetLength(0) == 0 || data->GetLength(1) == 0) {
+				MessageBox::Show(L"No data to extract.");
+				return nullptr;
+			}
+
+			int rowCount = data->GetLength(0);
+			int colCount = data->GetLength(1);
+
+			//  number of rows equal to SLcurrentUser
+			int validRowCount = 0;
+			for (int rowIdx = 0; rowIdx < rowCount; ++rowIdx) {
+				if (String::Equals(data[rowIdx, colCount - 1], SLcurrentUser)) {
+					validRowCount++;
+				}
+			}
+
+			// new array
+			array<String^, 2>^ extractedData = gcnew array<String^, 2>(validRowCount + 1, colCount); // +1 to include the header
+
+			// Copy the header row
+			for (int colIdx = 0; colIdx < colCount; ++colIdx) {
+				extractedData[0, colIdx] = data[0, colIdx];
+			}
+
+			// Copy data with SLcurrentUser
+			int extractedRowIdx = 1;
+			for (int rowIdx = 1; rowIdx < rowCount; ++rowIdx) {
+				if (String::Equals(data[rowIdx, colCount - 1], SLcurrentUser)) {
+					for (int colIdx = 0; colIdx < colCount; ++colIdx) {
+						extractedData[extractedRowIdx, colIdx] = data[rowIdx, colIdx];
+					}
+					extractedRowIdx++;
+				}
+			}
+
+			return extractedData;
+		}
+
+		void sellList::PopulateDataGridView(DataGridView^ dataGridView, array<String^, 2>^ data) {
+			if (data->Length == 0 || data->GetLength(0) == 0 || data->GetLength(1) == 0) {
+				MessageBox::Show(L"No data to display.");
+				return;
+			}
+
+			// Clear data
+			dataGridView->Rows->Clear();
+			dataGridView->Columns->Clear();
+
+			//  Column names
+			for (int colIdx = 0; colIdx < data->GetLength(1); ++colIdx) {
+				dataGridView->Columns->Add(gcnew DataGridViewTextBoxColumn());
+				dataGridView->Columns[dataGridView->Columns->Count - 1]->HeaderText = data[0, colIdx];
+			}
+
+			// Populate the DataGridView 
+			for (int rowIdx = 1; rowIdx < data->GetLength(0); ++rowIdx) {
+				dataGridView->Rows->Add();
+				for (int colIdx = 0; colIdx < data->GetLength(1); ++colIdx) {
+					dataGridView->Rows[rowIdx - 1]->Cells[colIdx]->Value = data[rowIdx, colIdx];
+				}
+			}
+		}
 
 private: System::Void sellList_Load(System::Object^ sender, System::EventArgs^ e) {
 }

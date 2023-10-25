@@ -46,7 +46,7 @@ User^ AuthenticateUser()
 
                 if (SellWindow->switchToSellList) {
 
-                    CPECaroSell::sellList^ SellList = gcnew CPECaroSell::sellList;
+                    CPECaroSell::sellList^ SellList = gcnew CPECaroSell::sellList(user);
                     SellList->SLcurrentUser = SellWindow->ScurrentUser;
                     SellList->ShowDialog();
                 }

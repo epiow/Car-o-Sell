@@ -242,6 +242,7 @@ private: System::Void cancelButton_Click(System::Object ^ sender, System::EventA
 }
 public: bool switchToSellList = false;
 private: System::Void viewMyListButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	System::String^ currentUser = ScurrentUser;
 	switchToSellList = true;
 	this->Close();
 }
