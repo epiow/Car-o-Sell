@@ -6,6 +6,7 @@
 #include <fstream>
 #include <sstream>
 #include "user.h"
+#include "sellWindow.h"
 
 namespace CPECaroSell {
 
@@ -23,8 +24,7 @@ namespace CPECaroSell {
 	{
 	public:
 		String^ SLcurrentUser;
-		sellList(void)
-		{
+		sellList(void) {
 			InitializeComponent();
 
 		}
@@ -68,7 +68,7 @@ namespace CPECaroSell {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 
@@ -352,9 +352,9 @@ namespace CPECaroSell {
 	}
 public: bool switchBackTosellWindow = false;
 
-private: System::Void backButton_Click(System::Object ^ sender, System::EventArgs ^ e) {
-	String^ currentUser = SLcurrentUser;
-	switchBackTosellWindow = true;
+	private: System::Void backButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ currentUser = SLcurrentUser;
+		switchBackTosellWindow = true;
 
 	this->Close();
 }
