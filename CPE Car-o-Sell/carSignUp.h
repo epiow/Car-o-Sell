@@ -242,3 +242,4 @@ private: System::Void confirmPasswordTextBox_TextChanged(System::Object^ sender,
 }
 };
 }
+//lowpo
