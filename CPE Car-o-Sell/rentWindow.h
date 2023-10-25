@@ -35,13 +35,13 @@ namespace CPECaroSell {
 			}
 
 			// Show the specific columns you want (indices 1, 2, 3, 4, 5, 6, and 10)
-			dataGridView1->Columns[1]->Visible = true; // Brand
-			dataGridView1->Columns[2]->Visible = true; // Transmission
-			dataGridView1->Columns[3]->Visible = true; // Cost
-			dataGridView1->Columns[4]->Visible = true; // Seats
-			dataGridView1->Columns[5]->Visible = true; // Plate #
+			dataGridView1->Columns[1]->Visible = true; // Model
+			dataGridView1->Columns[2]->Visible = true; // Brand
+			dataGridView1->Columns[3]->Visible = true; // Transmission
+			dataGridView1->Columns[4]->Visible = true; // Cost
+			dataGridView1->Columns[5]->Visible = true; // Seats
 			// You can add other columns as needed
-			dataGridView1->Columns[10]->Visible = true; // Approval
+			dataGridView1->Columns[6]->Visible = true; // Platenum
 		}
 
 	protected:
@@ -113,12 +113,12 @@ private: System::Windows::Forms::Button^ exitButton;
 
 			// Only load the selected cell if 'Approval' is "TRUE"
 			
-				model->Text = selectedRow->Cells[0]->Value->ToString();
-				brand->Text = selectedRow->Cells[1]->Value->ToString();
-				transmission->Text = selectedRow->Cells[2]->Value->ToString();
-				cost->Text = selectedRow->Cells[3]->Value->ToString();
-				seats->Text = selectedRow->Cells[4]->Value->ToString();
-				platenum->Text = selectedRow->Cells[5]->Value->ToString();
+				model->Text = selectedRow->Cells[1]->Value->ToString();
+				brand->Text = selectedRow->Cells[2]->Value->ToString();
+				transmission->Text = selectedRow->Cells[3]->Value->ToString();
+				cost->Text = selectedRow->Cells[4]->Value->ToString();
+				seats->Text = selectedRow->Cells[5]->Value->ToString();
+				platenum->Text = selectedRow->Cells[6]->Value->ToString();
 			
 		}
 
@@ -347,6 +347,7 @@ private: System::Windows::Forms::Button^ exitButton;
 		}
 
 		void PopulateDataGridView(DataGridView^ dataGridView, array<String^, 2>^ data) {
+
 			if (data->Length == 0 || data->GetLength(0) == 0 || data->GetLength(1) == 0) {
 				MessageBox::Show(L"No data to display.");
 				return;
@@ -376,7 +377,6 @@ private: System::Void platenum1_Click(System::Object^ sender, System::EventArgs^
 
 
 private: System::Void rentWindow_Load(System::Object^ sender, System::EventArgs^ e) {
-	
 
 }
 
@@ -416,6 +416,7 @@ private: System::Void textBox6_TextChanged(System::Object^ sender, System::Event
 }
 
 public: String^ RcurrentUser;
+public: String^ currentPlateNum;
 public: bool switchToCalendar;
 private: System::Void rentBtn_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	System::String^ currentUser = RcurrentUser;
@@ -423,15 +424,13 @@ private: System::Void rentBtn_Click_1(System::Object^ sender, System::EventArgs^
 	// Check if a row is selected in the DataGridView
 	if (dataGridView1->SelectedRows->Count == 1) {
 		// Get the selected row
-		DataGridViewRow^ selectedRow = dataGridView1->SelectedRows[0];
-
-		// Retrieve relevant data from the selected row
-		System::String^ model = selectedRow->Cells[0]->Value->ToString();
-		System::String^ brand = selectedRow->Cells[1]->Value->ToString();
+		DataGridViewRow^ selectedRow = dataGridView1->Rows[dataGridView1->CurrentCell->RowIndex];
+		currentPlateNum = selectedRow->Cells[6]->Value->ToString();
 
 		// Create an instance of the calendar form
 		CPECaroSell::calendar^ calendarView = gcnew CPECaroSell::calendar;
 		calendarView->CcurrentUser = RcurrentUser;
+		calendarView->CplateNum = currentPlateNum;
 		calendarView->ShowDialog();
 		
 	}

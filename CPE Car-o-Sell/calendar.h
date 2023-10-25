@@ -5,6 +5,9 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <random>
+#include <ctime>
+#include <msclr/marshal_cppstd.h>
 //#include "rentWindow.h"
 
 
@@ -24,12 +27,14 @@ namespace CPECaroSell {
 	{
 	public:
 		String^ CcurrentUser;
+		String^ CplateNum;
 		calendar(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
+
 		}
 
 	protected:
@@ -134,8 +139,9 @@ namespace CPECaroSell {
 			this->panel1->Location = System::Drawing::Point(-3, 1);
 			this->panel1->Margin = System::Windows::Forms::Padding(2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(274, 284);
+			this->panel1->Size = System::Drawing::Size(267, 288);
 			this->panel1->TabIndex = 3;
+			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &calendar::panel1_Paint);
 			// 
 			// calendarCancel
 			// 
@@ -199,6 +205,7 @@ namespace CPECaroSell {
 			this->Name = L"calendar";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"calendar";
+			this->Load += gcnew System::EventHandler(this, &calendar::calendar_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
@@ -206,9 +213,78 @@ namespace CPECaroSell {
 		}
 #pragma endregion
 	
+		void EditRentDatesInCSV(int transactID, String^ platenum, String^ rentDate, String^ returnDate, String^ currentUser, String ^ approval)
+		{
+			std::ifstream inputFile("Transaction.csv");
+			std::ofstream tempFile("temp.csv");
 
-	
+			if (!inputFile.is_open() || !tempFile.is_open()) {
+				MessageBox::Show(L"Error. Unable to open files for editing.");
+				return;
+			}
 
+			std::string line;
+
+			while (std::getline(inputFile, line)) {
+				std::vector<std::string> row;
+				std::istringstream iss(line);
+				std::string cell;
+
+				while (std::getline(iss, cell, ',')) {
+					row.push_back(cell);
+				}
+
+				// Check if the "platenum" in the row (assuming it's in a specific column, e.g., column 6)
+				if (row.size() >= 6 && String::Equals(gcnew String(row[6].c_str()), platenum)) {
+					// Update the "rentDate" and "returnDate" values in this row with the provided values.
+					if (row.size() >= 1) {
+						row[0] = std::to_string(transactID); // Update the first column value
+					}
+					if (row.size() >= 8) {
+						row[7] = msclr::interop::marshal_as<std::string>(rentDate);    // Update rentDate
+						row[8] = msclr::interop::marshal_as<std::string>(returnDate);  // Update returnDate
+						row[9] = msclr::interop::marshal_as<std::string>(currentUser);	   //Update platenum
+						row[11] = msclr::interop::marshal_as<std::string>(approval);
+					}
+				}
+
+				// Reconstruct the line and write it to the temporary file.
+				for (size_t i = 0; i < row.size(); ++i) {
+					tempFile << row[i];
+					if (i < row.size() - 1) {
+						tempFile << ",";
+					}
+				}
+				tempFile << "\n";
+			}
+
+			inputFile.close();
+			tempFile.close();
+
+			// Replace the original file with the temporary file.
+			std::remove("Transaction.csv"); // Delete the original file.
+			std::rename("temp.csv", "Transaction.csv"); // Rename the temporary file to the original file.
+
+			MessageBox::Show(L"Rent dates edited successfully.");
+		}
+
+		int GenerateUniqueTransactionID()
+		{
+			// Get the current timestamp
+			std::time_t currentTime = std::time(nullptr);
+
+			// Generate a random number (you can customize the range as needed)
+			std::random_device rd;
+			std::mt19937 gen(rd());
+			std::uniform_int_distribution<int> distribution(1000, 9999); // Customize the range if needed
+
+			int randomNumber = distribution(gen);
+
+			// Combine the timestamp and random number to create a unique ID
+			int uniqueID = static_cast<int>(currentTime) + randomNumber;
+
+			return uniqueID;
+		}
 
 private: System::Void monthCalendar1_DateSelected(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
 	startDate->Text = monthCalendar1->SelectionRange->Start.Date.ToString("MM-dd-yyyy");
@@ -229,42 +305,30 @@ private: System::Void monthCalendar1_DateChanged(System::Object^ sender, System:
 private: System::Void calendarEnter_Click(System::Object^ sender, System::EventArgs^ e) {
 	// Specify the file path
 	String^ currentUser = CcurrentUser;
+	String^ currentPlateNum = CplateNum;
 	String^ filePath = "Transaction.csv";
 
 	// Retrieve the selected rental and return dates
 	DateTime startDate = monthCalendar1->SelectionStart;
 	DateTime endDate = monthCalendar1->SelectionEnd;
 
-	// Retrieve the "Plate #" of the car to be rented (replace "desiredPlateNumber" with the actual value)
-	String^ desiredPlateNumber = "EPI0000"; // Replace with the actual "Plate #" you want to rent.
+	String^ startDateStr = startDate.ToString("MM-dd-yyyy");
+	String^ endDateStr = endDate.ToString("MM-dd-yyyy");
 
-	// Open and read the CSV file
-	cli::array<String^>^ lines = File::ReadAllLines(filePath);
+	int transactID = GenerateUniqueTransactionID();
 
-	// Find the row that corresponds to the desired car based on the "Plate #"
-	int i = 1;
-	for each (String ^ line in lines) {
-		array<String^>^ columns = line->Split(',');
-		
-		// Assuming the "Plate #" is in the sixth column (index 6)
-		if (columns->Length > 6 && columns[6]->Trim() == desiredPlateNumber) {
-			// Update the "Rental Date" and "Return Date" columns (modify the indices accordingly)
-			columns[7] = startDate.ToShortDateString();
-			columns[8] = endDate.ToShortDateString();
-			columns[9] = currentUser;
+	EditRentDatesInCSV(transactID, currentPlateNum, startDateStr, endDateStr, currentUser,"FALSE");
 
-			// Reconstruct the updated line
-			lines[i] = String::Join(",", columns);
-			i++;
-			// Save the modified data back to the file
-			File::WriteAllLines(filePath, lines);
-
-			// You can break the loop here since you found the desired car
-			break;
-		}
-	}
+	
+	this->Close();
 }
 
 
+private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+
+private: System::Void calendar_Load(System::Object^ sender, System::EventArgs^ e) {
+
+}
 };
 }
