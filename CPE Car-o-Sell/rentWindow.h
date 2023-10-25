@@ -112,14 +112,15 @@ private: System::Windows::Forms::Button^ exitButton;
 			System::String^ approvalValue = selectedRow->Cells[10]->Value->ToString();
 
 			// Only load the selected cell if 'Approval' is "TRUE"
-			
+			if (approvalValue->Trim()->Equals("TRUE", System::StringComparison::InvariantCultureIgnoreCase))
+			{
 				model->Text = selectedRow->Cells[0]->Value->ToString();
 				brand->Text = selectedRow->Cells[1]->Value->ToString();
 				transmission->Text = selectedRow->Cells[2]->Value->ToString();
 				cost->Text = selectedRow->Cells[3]->Value->ToString();
 				seats->Text = selectedRow->Cells[4]->Value->ToString();
 				platenum->Text = selectedRow->Cells[5]->Value->ToString();
-			
+			}
 		}
 
 		void InitializeComponent(void)
