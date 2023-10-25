@@ -12,18 +12,17 @@ namespace CPECaroSell {
 
 	using namespace System;
 	using namespace System::ComponentModel;
+	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
-	using namespace System::Collections::Generic;
-	using namespace System::IO;
+
 	/// <summary>
 	/// Summary for calendar
 	/// </summary>
 	public ref class calendar : public System::Windows::Forms::Form
 	{
 	public:
-		String^ CcurrentUser;
 		calendar(void)
 		{
 			InitializeComponent();
@@ -225,46 +224,38 @@ private: System::Void exitButton_Click(System::Object^ sender, System::EventArgs
 private: System::Void monthCalendar1_DateChanged(System::Object^ sender, System::Windows::Forms::DateRangeEventArgs^ e) {
 
 }
-
 private: System::Void calendarEnter_Click(System::Object^ sender, System::EventArgs^ e) {
 	// Specify the file path
-	String^ currentUser = CcurrentUser;
 	String^ filePath = "Transaction.csv";
 
-	// Retrieve the selected rental and return dates
 	DateTime startDate = monthCalendar1->SelectionStart;
 	DateTime endDate = monthCalendar1->SelectionEnd;
 
-	// Retrieve the "Plate #" of the car to be rented (replace "desiredPlateNumber" with the actual value)
-	String^ desiredPlateNumber = "EPI0000"; // Replace with the actual "Plate #" you want to rent.
+	if (dataGridView1->SelectedRows->Count == 1) {
 
-	// Open and read the CSV file
-	cli::array<String^>^ lines = File::ReadAllLines(filePath);
+		DataGridViewRow^ selectedRow = dataGridView1->SelectedRows[0];
 
-	// Find the row that corresponds to the desired car based on the "Plate #"
-	int i = 1;
-	for each (String ^ line in lines) {
-		array<String^>^ columns = line->Split(',');
-		
-		// Assuming the "Plate #" is in the sixth column (index 6)
-		if (columns->Length > 6 && columns[6]->Trim() == desiredPlateNumber) {
-			// Update the "Rental Date" and "Return Date" columns (modify the indices accordingly)
-			columns[7] = startDate.ToShortDateString();
-			columns[8] = endDate.ToShortDateString();
-			columns[9] = currentUser;
+		// Retrieve relevant data from the selected row
+		System::String^ model = selectedRow->Cells[1]->Value->ToString();
+		System::String^ brand = selectedRow->Cells[2]->Value->ToString();
+		System::String^ transmission = selectedRow->Cells[3]->Value->ToString();
+		System::String^ cost = selectedRow->Cells[4]->Value->ToString();
+		System::String^ seats = selectedRow->Cells[5]->Value->ToString();
+		System::String^ plateNumber = selectedRow->Cells[6]->Value->ToString();
+		System::String^ currentUser = selectedRow->Cells[10]->Value->ToString();
+		System::String^ approval = selectedRow->Cells[11]->Value->ToString();
 
-			// Reconstruct the updated line
-			lines[i] = String::Join(",", columns);
-			i++;
-			// Save the modified data back to the file
-			File::WriteAllLines(filePath, lines);
+		System::String^ transactionData = String::Format("\n{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11}",
+			"", model, brand, transmission, cost, seats, plateNumber, startDate.ToString("d"), endDate.ToString("d"), " ", currentUser, approval);
 
-			// You can break the loop here since you found the desired car
-			break;
-		}
+		System::IO::File::AppendAllText("Transaction.csv", transactionData);
+
+	}
+	else {
+		// Inform the user that they need to select a row from the DataGridView.
+		MessageBox::Show("Please select a car from the list to rent.", "Information", MessageBoxButtons::OK, MessageBoxIcon::Information);
 	}
 }
-
 
 };
 }

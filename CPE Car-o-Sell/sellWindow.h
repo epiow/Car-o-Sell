@@ -242,14 +242,14 @@ private: System::Void cancelButton_Click(System::Object ^ sender, System::EventA
 }
 public: bool switchToSellList = false;
 private: System::Void viewMyListButton_Click(System::Object^ sender, System::EventArgs^ e) {
+	System::String^ currentUser = ScurrentUser;
 	switchToSellList = true;
 	this->Close();
 }
 public: String^ ScurrentUser;
 private: System::Void proceedButton_Click(System::Object^ sender, System::EventArgs^ e) {
-
 	System::String^ currentUser = ScurrentUser;
-
+	MessageBox::Show(currentUser, "Message Box Title", MessageBoxButtons::OK, MessageBoxIcon::Information);
 	System::String^ brand = brandTextBox->Text;
 	System::String^ model = modelTextBox->Text;
 	System::String^ seats = numberOfSeatsTextBox->Text;

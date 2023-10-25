@@ -112,14 +112,15 @@ private: System::Windows::Forms::Button^ exitButton;
 			System::String^ approvalValue = selectedRow->Cells[10]->Value->ToString();
 
 			// Only load the selected cell if 'Approval' is "TRUE"
-			
+			if (approvalValue->Trim()->Equals("TRUE", System::StringComparison::InvariantCultureIgnoreCase))
+			{
 				model->Text = selectedRow->Cells[0]->Value->ToString();
 				brand->Text = selectedRow->Cells[1]->Value->ToString();
 				transmission->Text = selectedRow->Cells[2]->Value->ToString();
 				cost->Text = selectedRow->Cells[3]->Value->ToString();
 				seats->Text = selectedRow->Cells[4]->Value->ToString();
 				platenum->Text = selectedRow->Cells[5]->Value->ToString();
-			
+			}
 		}
 
 		void InitializeComponent(void)
@@ -418,8 +419,9 @@ private: System::Void textBox6_TextChanged(System::Object^ sender, System::Event
 public: String^ RcurrentUser;
 public: bool switchToCalendar;
 private: System::Void rentBtn_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	switchToCalendar = 1;
 	System::String^ currentUser = RcurrentUser;
-	
+
 	// Check if a row is selected in the DataGridView
 	if (dataGridView1->SelectedRows->Count == 1) {
 		// Get the selected row
@@ -430,9 +432,8 @@ private: System::Void rentBtn_Click_1(System::Object^ sender, System::EventArgs^
 		System::String^ brand = selectedRow->Cells[1]->Value->ToString();
 
 		// Create an instance of the calendar form
-		CPECaroSell::calendar^ calendarView = gcnew CPECaroSell::calendar;
-		calendarView->CcurrentUser = RcurrentUser;
-		calendarView->ShowDialog();
+		//CPECaroSell::calendar^ calendarView = gcnew CPECaroSell::calendar;
+		//calendarView->ShowDialog();
 		
 	}
 	else {

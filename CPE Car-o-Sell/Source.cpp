@@ -35,7 +35,7 @@ User^ AuthenticateUser()
          
             {
                 CPECaroSell::rentWindow^ rentWin= gcnew CPECaroSell::rentWindow(user);
-                calendarWin.CcurrentUser = loginForm.currentUser;
+                rentWin->RcurrentUser = loginForm.currentUser;
                 rentWin->ShowDialog();
  
                 if (rentWin->switchBackToUserMain)
@@ -50,12 +50,11 @@ User^ AuthenticateUser()
 
                 if (SellWindow->switchToSellList) {
 
-                    CPECaroSell::sellList^ SellList = gcnew CPECaroSell::sellList;
+                    CPECaroSell::sellList^ SellList = gcnew CPECaroSell::sellList(user);
                     SellList->SLcurrentUser = SellWindow->ScurrentUser;
                     SellList->ShowDialog();
                 }
             }
-            else
             {
                 return mainWinForm.user;
             }
