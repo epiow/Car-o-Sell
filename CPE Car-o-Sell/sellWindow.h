@@ -248,9 +248,8 @@ private: System::Void viewMyListButton_Click(System::Object^ sender, System::Eve
 }
 public: String^ ScurrentUser;
 private: System::Void proceedButton_Click(System::Object^ sender, System::EventArgs^ e) {
-
 	System::String^ currentUser = ScurrentUser;
-
+	MessageBox::Show(currentUser, "Message Box Title", MessageBoxButtons::OK, MessageBoxIcon::Information);
 	System::String^ brand = brandTextBox->Text;
 	System::String^ model = modelTextBox->Text;
 	System::String^ seats = numberOfSeatsTextBox->Text;

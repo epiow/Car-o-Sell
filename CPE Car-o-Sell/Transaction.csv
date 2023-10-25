@@ -1,10 +1,7 @@
 Transaction ID,Model,Brand,Transmission,Cost,Seats,Plate #,Rental Date,Return Date,Renter,Seller,Approval
-1,Wigo,Toyota,Auto,1000,4,ABC1234, , , , ,TRUE
-2,Innova,Toyota,Auto,2000,8,DEF9877, , , , ,FALSE
-3,Hilux,Toyota,Auto,3000,5,ELY5678, , , ,user1,TRUE
-4,Fortuner,Toyota,Auto,3000,7,EPI0000, , , ,user1,FALSE
-5,Machhiato,Starbuck,Manual,150,0,SB123, , , ,user3,FALSE
-6,Hilux,Toyota,Auto,3000,5,ELY5678, , , , ,TRUE
-7,Fortuner,Toyota,Auto,3000,7,EPI0000, , , , ,FALSE
-,123,Toyota ,123414,141252,1312,3124, , , ,user1,FALSE
-,Everest,Ford,Auto,500,7,GAH1839, , , ,user1,FALSE
+1698245686,Fortuner,Toyota,Auto,3000,7,EPI0000,10-23-2023,10-27-2023,user1,user1,FALSE
+2,Innova,Toyota,Auto,2000,8,DEF9877, , , , ,TRUE
+1698245686,Fortuner,Toyota,Auto,3000,7,EPI0000,10-23-2023,10-27-2023,user1,user1,FALSE
+1698234507,Machhiato,Starbuck,Manual,150,0,SB123,10-09-2023,10-12-2023,user1,user3,FALSE
+1698235294,Hilux,Toyota,Auto,3000,5,ELY5678,10-16-2023,10-19-2023,user1, ,FALSE
+,123,Toyota ,123414,141252,1312,3124, , , ,user1,TRUE
