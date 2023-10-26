@@ -5,6 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include "returnCar.h"
 #include "calendar.h"
 #include "user.h"
 
@@ -81,6 +82,8 @@ private: System::Windows::Forms::Button^ exitButton;
 
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button3;
 
 
 
@@ -136,6 +139,8 @@ private: System::Windows::Forms::Button^ exitButton;
 			this->platenum = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -242,11 +247,31 @@ private: System::Windows::Forms::Button^ exitButton;
 			this->dataGridView1->StandardTab = true;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &rentWindow::dataGridView1_CellContentClick);
 			// 
+			// button2
+			// 
+			this->button2->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->button2->FlatAppearance->BorderSize = 0;
+			resources->ApplyResources(this->button2, L"button2");
+			this->button2->Name = L"button2";
+			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &rentWindow::button2_Click);
+			// 
+			// button3
+			// 
+			this->button3->BackColor = System::Drawing::SystemColors::ControlLightLight;
+			this->button3->FlatAppearance->BorderSize = 0;
+			resources->ApplyResources(this->button3, L"button3");
+			this->button3->Name = L"button3";
+			this->button3->UseVisualStyleBackColor = false;
+			this->button3->Click += gcnew System::EventHandler(this, &rentWindow::button3_Click);
+			// 
 			// rentWindow
 			// 
 			resources->ApplyResources(this, L"$this");
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoValidate = System::Windows::Forms::AutoValidate::EnablePreventFocusChange;
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->platenum);
@@ -438,6 +463,13 @@ private: System::Void rentBtn_Click_1(System::Object^ sender, System::EventArgs^
 		// Inform the user that they need to select a row from the DataGridView.
 		MessageBox::Show("Please select a car from the list to rent.", "Information", MessageBoxButtons::OK, MessageBoxIcon::Information);
 	}
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	CPECaroSell::returnCar^ returnCarView = gcnew CPECaroSell::returnCar;
+	returnCarView->ReturnCurrentUser = RcurrentUser;
+	returnCarView->ShowDialog();
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

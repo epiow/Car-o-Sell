@@ -397,7 +397,7 @@ namespace CPECaroSell {
 			   this->delBtn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				   static_cast<System::Byte>(0)));
 			   this->delBtn->ImeMode = System::Windows::Forms::ImeMode::NoControl;
-			   this->delBtn->Location = System::Drawing::Point(220, 624);
+			   this->delBtn->Location = System::Drawing::Point(215, 624);
 			   this->delBtn->Margin = System::Windows::Forms::Padding(2, 1, 2, 1);
 			   this->delBtn->Name = L"delBtn";
 			   this->delBtn->Size = System::Drawing::Size(83, 32);

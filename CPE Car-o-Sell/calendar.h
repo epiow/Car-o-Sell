@@ -8,7 +8,6 @@
 #include <random>
 #include <ctime>
 #include <msclr/marshal_cppstd.h>
-//#include "rentWindow.h"
 
 
 namespace CPECaroSell {

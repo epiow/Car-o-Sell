@@ -42,6 +42,9 @@
     <ClCompile Include="sellList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="returnCar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="carLogin.h">
@@ -72,6 +75,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Header.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="returnCar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
