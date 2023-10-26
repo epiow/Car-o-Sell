@@ -219,7 +219,7 @@ namespace CPECaroSell {
 			}
 
 			// Write the new username and password to the file
-			file << msclr::interop::marshal_as<std::string>(newUsername) << "," << msclr::interop::marshal_as<std::string>(newPassword) << std::endl;
+			file << msclr::interop::marshal_as<std::string>(newUsername) << "," << msclr::interop::marshal_as<std::string>(newPassword) << ",FALSE" << std::endl;
 
 			file.close();
 		}
